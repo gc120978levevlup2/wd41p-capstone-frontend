@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - AppendChild()</title>
+</head>
+<body>
+    <div class="container">
+        <ul id="list2">
+            <li>Blueberry</li>
+            <li>Vanilla</li>
+            <li>Chocolate</li>
+        </ul>
+        <ul id="list1">
+            <li>Wintermelon</li>
+            <li>Saltead caramel</li>
+            <li>Matcha</li>
+        </ul>
+
+        <ul id="menu">
+            <li>Products</li>
+            <li>About Us</li>
+        </ul>
+
+        <div id="note">
+            This is my Content
+           <span style="display:none">Hidden Text!</span>
+        </div> 
+
+        <button id="btn">Click here</button>
+        <button id="btn2">Click here</button>
+        <h1 id="text1"></h1>
+        <h1 id="text2"></h1>
+    </div>
+    <script>
+        // const firstList = document.querySelector('#list1');
+
+        // const firstChildEle = firstList.firstElementChild;
+
+        // const secondList = document.querySelector('#list2');
+        
+        // setTimeout(function() {
+        //     secondList.prepend(firstChildEle);
+        // }, 2000)
+
+
+        // let menu = document.getElementById('menu');
+        // let li = document.createElement('li');
+        // li.textContent = 'Home';
+        // setTimeout(function() {
+        //     menu.insertBefore(li, menu.firstElementChild);
+        // }, 4000)
+        
+        // setTimeout(function() {
+        //     menu.removeChild(menu.lastElementChild);
+        // }, 6000)
+        // setTimeout(function() {
+        //     // while (menu.firstChild) {
+        //     //     menu.removeChild(menu.firstChild); 
+        //     // }
+        //     menu.innerHTML = '';
+        // }, 7000)
+
+        // let note = document.getElementById('note');
+        // setTimeout(function() {
+        //     alert(note.textContent);
+        // }, 10000)
+        // setTimeout(function() {
+        //     alert(note.innerText);
+        // }, 10500)
+
+        // document.addEventListener("click", myFunction);
+
+        // function myFunction() {
+        //     document.getElementById("note").innerHTML = "Hello World";
+        // }
+
+        let btn_element = document.getElementById("btn");
+  
+        btn_element.addEventListener("click", showText );
+
+        let btn_element2 = document.getElementById("btn2");
+  
+        btn_element2.addEventListener("click", showText );
+
+        // btn_element.onclick = () => {
+        //     document.getElementById("text1").innerHTML = "Task 1 is performed";
+            
+        //     document.getElementById("text2").innerHTML = "Task 2 is performed";
+        // };
+
+        // btn_element.onclick = () => {
+        //     document.getElementById("text1").innerHTML = "Task 1 is performed";
+        // };
+    
+        // btn_element.onclick = () => { 
+        //     document.getElementById("text2").innerHTML = "Task 2 is performed";
+        // };
+
+        function showText() {
+            document.getElementById("text1").innerHTML = '';
+            document.getElementById("text2").innerHTML = '';
+            setTimeout(function() {
+                document.getElementById("text1").innerHTML = "Task 1 is performed";
+            }, 2000)
+
+            setTimeout(function() {
+                document.getElementById("text2").innerHTML = "Task 2 is performed";
+            }, 3000)
+        }
+
+
+    </script>
+</body>
+</html>

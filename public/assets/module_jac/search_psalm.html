@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myApp</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/view/img/favicon.jpg"
+      type="image/jpeg"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="/assets/view/style/css/main.css" />
+    <style>
+        body {
+            background-image: url('img/psalm23_cover3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: rgb(116, 113, 113);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- root DOM element to contain the page views later-->
+    <div id="root">
+      <div class="grid-container">
+        <div>
+            <div class="row">
+                <div class="col-md-12" id="header"></div>
+            </div>
+        </div>
+        <div class="container page-body" id="main-body-container">
+            <div class="container" id="main-body" style="overflow:hidden;background-color: rgba(234, 229, 208, 0.51);">   
+                <!-- Put more html content here -->
+                <header>
+                    <img class="rounded-circle shadow" width="80px" height="80px" src="/assets/module_jac/img/psalms-logo.jpg" alt="">
+                    &nbsp;&nbsp;
+                    <h1 class="text-white">The Book of Psalms</h1>
+                </header>
+                <br>
+                <div class="row row-cols-md-9 row-cols-lg-10 row-cols-xl-12 row-cols-xxl-12" id="psalm-buttons"></div>
+            </div> 
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-md-12" id="footer"></div>
+            </div>
+        </div>     
+    </div>
+    </div>
+    <!-- jquery javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- bootstrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- supabase API javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- controller javascript -->
+    <script type="module">
+        import {psalm} from "./data/zdata.js"
+        import {                  
+            user_is_logged_in,
+            user_is_a,
+                             } from "/assets/model/local/login_user.js"
+
+        import { menu_view           } from "/assets/view/js/sub/menu_view_jac.js"
+        import { footer_view         } from "/assets/view/js/sub/footer_view.js"
+        import { psalm_search_submit } from "/assets/controller/submit/psalm_search_submit.js"
+
+        let menu_options = ['home','login','buyer_signup','seller_signup','buyer_about','buyer_merch']
+        if (user_is_logged_in()){
+            if (user_is_a("seller")){
+                menu_options = ['home','seller_dashboard','seller_reg_item', 'seller_ord_item','buyer_merch','logout']
+            }else{
+                menu_options = ['home','buyer_dashboard','buyer_checkout','buyer_about','buyer_merch','logout']
+            }
+        }
+        
+        //console.log(menu_options)
+        menu_view("", menu_options, "header")
+        footer_view("footer")
+        $('#main-body-container').removeClass('container') // remove this to make the container visible 
+
+        function stripHtml(html){
+            let tmp = document.createElement("DIV");
+            tmp.innerHTML = html;
+            let ret = tmp.textContent || tmp.innerText || "";
+            return ret.replace(/[^a-zA-Z0-9 ]/g, '').replaceAll(/\s/g,'');
+        }
+        psalm_search_submit(() => {}, out => {
+            let search = stripHtml(out.search.toUpperCase())
+            //console.log(stripHtml(psalm[0].content.toUpperCase()))
+            let psalm_search = psalm.filter( x => ( stripHtml(x.content.toUpperCase()).includes(search) ))
+            //console.log( psalm_search)
+            if (psalm_search.length > 0)
+                $('#psalm-buttons').html(
+                    psalm.map ( (book, i) => (/*html*/`
+                        <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop2-${book.number}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#staticBackdropLabel-${book.number}" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered  modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-primary-subtle">
+                                                <h5 class="modal-title" id="staticBackdropLabel-${book.number}">Psalm ${book.number}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ${book.content}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button  class="btn btn-outline-primary" style="float:left;width:130px" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop2-${book.number-1}">
+                                                    <i class="bi bi-arrow-bar-left"></i>
+                                                    Previous
+                                                </button>
+                                                <button  class="btn btn-outline-primary" style="float:left;width:130px" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop2-${book.number+1}">
+                                                    <i class="bi bi-arrow-bar-right"></i>
+                                                    Next
+                                                </button>
+                                                <button  class="btn btn-outline-danger " data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    `/*html*/)).join('')+'\n'+
+                    psalm_search.map ( (book, i) => (/*html*/`
+                        <div class="col p-2 d-flex">
+                            <button 
+                                type="button" 
+                                class="btn btn-success p-3 m-auto"  
+                                style="width:160px" 
+                                id="psalm-${book.number}"
+                                data-bs-toggle="modal" data-bs-target="#staticBackdrop2-${book.number}"
+                            >
+                                Psalm ${book.number}
+                            </button>
+                        </div>
+                    `/*html*/)).join(''))
+                else  $('#psalm-buttons').html('<br><h3>[Search Result is empty]</h3><br><br><br><br><br><br><br><br><br><br><br><br>')
+        })
+   </script>
+  </body>
+</html>

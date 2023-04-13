@@ -1,0 +1,89 @@
+import Carousel from "react-bootstrap/Carousel"
+// model
+import { read_sellers } from "../../model/remote/sellers.js"
+import { read_users } from "../../model/remote/users.js"
+import {
+	create_user,
+	create_user_a_seller,
+	create_user_a_buyer,
+	user_is_a,
+} from "../../model/local/login_user.js"
+
+// controller
+//import { showModal } from "../../controller/misc/misc.js"
+import { login_form_submit } from "../../controller/submit/login_form_submit.js"
+import $ from "jquery"
+
+const Login = () => {
+	function peakPassword() {
+		let password = document.getElementById("exampleInputPassword1")
+		const type = "text"
+		document.getElementById("togglePassword").className = "bi bi-eye"
+		password.setAttribute("type", type)
+	}
+
+	function unpeakPassword() {
+		let password = document.getElementById("exampleInputPassword1")
+		const type = "password"
+		document.getElementById("togglePassword").className = "bi bi-eye-slash"
+		password.setAttribute("type", type)
+	}
+
+	login_form_submit(
+		() => {},
+		(data) => {
+			read_sellers(data.email1, (sellers) => {
+				if (sellers.length === 1) {
+					// user is found
+					if (sellers[0].password1 === data.password1) {
+						create_user(sellers[0])
+						create_user_a_seller()
+						window.location.href = "/seller_dashboard"
+					} else {
+						window.location.href = `/login?msg=${"Error: password does not match"}`
+					}
+				} else {
+					read_users(data.email1, (users) => {
+						if (users.length === 1) {
+							// user is found
+							if (users[0].password1 === data.password1) {
+								create_user(users[0])
+								create_user_a_buyer()
+								window.location.href = "/buyer_dashboard"
+							} else {
+								window.location.href = `/login?msg=${"Error: password does not match"}`
+							}
+						} else {
+							window.location.href = `/login?msg=${"Error: user account does not exitst"}`
+						}
+					})
+				}
+			})
+		},
+		(msg) => {
+			//showModal("msg-modal-dialog")
+			$("#msg-span").html(msg)
+		}
+	)
+	return (
+		<div
+			className="container-fluid d-flex w-100 p-0"
+			style={{
+				position: "relative",
+				overflow: "hidden",
+				minHeight: "calc(100vh + 60px)",
+			}}>
+			<div className="w-100">
+				<div
+					className="container mt-5"
+					style={{ overflow: "hidden", width: "100%" }}>
+					<div className="row g-2 w-100 mt-5 px-3">
+						<div className="w-100"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export default Login

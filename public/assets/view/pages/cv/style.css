@@ -1,0 +1,189 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    height: 100%;  
+  }
+  
+body {
+    min-height: 100%;  
+    background: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #222;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 0px 40px 40px 40px;
+   
+  }
+  
+
+.header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .full-name {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  .first-name {
+    font-weight: 700;
+  }
+  
+  .last-name {
+    font-weight: 300;
+
+  }
+  
+  .contact-info {
+    margin-bottom: 20px;
+  }
+  
+  .email ,
+  .phone , .linkedIn {
+    color: rgb(90, 90, 90);
+    font-weight: 300;
+  } 
+  
+  .separator {
+    height: 10px;
+    display: inline-block;
+    border-left: 2px solid #999;
+    margin: 0px 10px;
+  }
+
+  .position {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: underline;
+  }
+  
+  
+.details {
+  line-height: 20px;
+}
+
+
+.section {
+  margin-bottom: 30px;  
+}
+
+.section:last-of-type {
+  margin-bottom: 0px;  
+}
+
+.section-title {
+  letter-spacing: 2px;
+  color: #54AFE4;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-list {
+  margin-top: 20px;
+}
+
+.section-list-item {
+  margin-bottom: 40px;
+}
+
+.section-list-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.left ,
+.right {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.left{
+  width: 60%;    
+}
+
+.right {
+  text-align: right;
+  width: 39%;    
+}
+
+@media screen and (max-width: 482px) {
+  .right {
+  text-align: left;
+    margin-top: 10px;
+  }
+  .full-name{
+    font-size: 30px;
+  }
+}
+
+.right-skills{
+  float: left;
+  width:39%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.text{
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.text-cert{
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.text ul{
+ size: 400;
+}
+.text li{
+  padding-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.skills {
+  margin-top: 20px;  
+}
+  
+.skills-item {
+  margin-bottom: 10px;  
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;  
+  width: 20px;
+  height: 20px;
+  background: #C3DEF3;
+  border-radius: 20px;
+  margin-right: 3px;
+}
+
+input:checked + label {
+  background: #79A9CE;
+}

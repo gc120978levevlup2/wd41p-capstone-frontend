@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta
+			http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>myApp</title>
+		<link
+			rel="shortcut icon"
+			href="/assets/view/img/favicon.jpg"
+			type="image/jpeg" />
+		<!-- custom css -->
+		<link rel="stylesheet" href="/assets/view/style/css/main.css" />
+		<style>
+			body {
+				background-image: url("img/psalm23_cover3.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 100%;
+			}
+
+			header {
+				display: flex;
+				align-items: center;
+				padding: 20px;
+				background-color: rgb(116, 113, 113);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- root DOM element to contain the page views later-->
+		<div id="root">
+			<div class="grid-container">
+				<div>
+					<div class="row">
+						<div class="col-md-12" id="header"></div>
+					</div>
+				</div>
+				<div class="container page-body" id="main-body-container">
+					<div
+						class="container"
+						id="main-body"
+						style="
+							overflow: hidden;
+							background-color: rgba(234, 229, 208, 0.51);
+						">
+						<!-- Put more html content here -->
+						<header
+							class="d-flex justify-content-sm-between"
+							style="background-color: rgb(255, 252, 240)">
+							<div
+								class="d-flex flex-wrap justify-content-center">
+								<img
+									class="rounded-circle shadow"
+									width="80px"
+									height="80px"
+									src="paws1.jpg"
+									alt="" />
+								&nbsp;&nbsp;
+								<h1 class="text-success m-auto">
+									Community Helping Paws
+								</h1>
+							</div>
+
+							<div class="width:1250px"></div>
+							<div
+								style="float: right; height: 100%"
+								class="d-flex flex-wrap justify-content-center">
+								<ul class="nav nav-pills">
+									<li class="nav-item">
+										<a
+											href="programs.html"
+											class="nav-link text-black fs-5 fw-bolder"
+											>Programs</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="articles.html"
+											class="nav-link text-black fs-5 fw-bolder"
+											>Articles</a
+										>
+									</li>
+								</ul>
+							</div>
+						</header>
+						<br />
+						<div id="contents"></div>
+					</div>
+				</div>
+				<div>
+					<div class="row">
+						<div class="col-md-12" id="footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- jquery javascript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- bootstrap javascript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- supabase API javascript -->
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<!-- controller javascript -->
+		<script type="module">
+			import {
+				user_is_logged_in,
+				user_is_a,
+			} from "/assets/model/local/login_user.js"
+
+			import { menu_view } from "/assets/view/js/sub/menu_view_ds.js"
+			import { footer_view } from "/assets/view/js/sub/footer_view.js"
+
+			let menu_options = [
+				"home",
+				"login",
+				"buyer_signup",
+				"seller_signup",
+				"buyer_about",
+				"buyer_merch",
+			]
+			if (user_is_logged_in()) {
+				if (user_is_a("seller")) {
+					menu_options = [
+						"home",
+						"seller_dashboard",
+						"seller_reg_item",
+						"seller_ord_item",
+						"buyer_about",
+						"buyer_merch",
+						"logout",
+					]
+				} else {
+					menu_options = [
+						"home",
+						"buyer_dashboard",
+						"buyer_checkout",
+						"buyer_about",
+						"buyer_merch",
+						"logout",
+					]
+				}
+			}
+
+			//console.log(menu_options)
+			menu_view("home", menu_options, "header")
+			footer_view("footer")
+			$("#main-body-container").removeClass("container") // remove this to make the container visible
+
+			$("#contents").html(/*html*/ `
+            
+
+		<div class="container">
+			<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button
+						type="button"
+						data-bs-target="#myCarousel"
+						data-bs-slide-to="0"
+						class="active"
+						aria-label="Slide 1"
+						aria-current="true"></button>
+					<button
+						type="button"
+						data-bs-target="#myCarousel"
+						data-bs-slide-to="1"
+						aria-label="Slide 2"
+						class=""></button>
+					<button
+						type="button"
+						data-bs-target="#myCarousel"
+						data-bs-slide-to="2"
+						aria-label="Slide 3"
+						class=""></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="whitey.png" class="d-block w-100 h-100" />
+						<div class="container">
+							<div class="carousel-caption text-start">
+								<div class="d-sm-none d-md-block">
+									<h1>Ways To Help</h1>
+									<p>
+										We Have Plenty Of Ways For You To Help
+										And Get Involve!
+									</p>
+								</div>
+								<p>
+									<a
+										class="btn btn-lg btn-success"
+										href="/assets/view/pages/buyer_signup.html"
+										>Sign up today</a
+									>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="dobbie4.png" class="d-block w-100 h-100" />
+						<div class="container">
+							<div class="carousel-caption">
+								<div class="d-sm-none d-md-block">
+									<h1>Shelter, Safety, Second Chances</h1>
+									<p>
+										Every dog deserves a second chance...of
+										life, hope, happiness, and most of all,
+										love.
+									</p>
+								</div>
+								<p>
+									<a
+										class="btn btn-lg btn-success"
+										href="#aboutus"
+										>Learn more of our story!</a
+									>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="choco1.png" class="d-block w-100 h-100" />
+						<div class="container">
+							<div class="carousel-caption text-start">
+								<div class="d-sm-none d-md-block">
+									<h1>One more for good measure.</h1>
+									<p>
+										Help us give love, hope and second
+										chance to dogs in need.
+									</p>
+								</div>
+								<p>
+									<a
+										class="btn btn-lg btn-success"
+										href="programs.html"
+										>Browse Programs</a
+									>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button
+					class="carousel-control-prev"
+					type="button"
+					data-bs-target="#myCarousel"
+					data-bs-slide="prev">
+					<span
+						class="carousel-control-prev-icon"
+						aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button
+					class="carousel-control-next"
+					type="button"
+					data-bs-target="#myCarousel"
+					data-bs-slide="next">
+					<span
+						class="carousel-control-next-icon"
+						aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		<div id="aboutus">
+			<div class="container col-xxl-8 px-4 my-0">
+				<h2 class="pb-2 border-bottom"></h2>
+				<div
+					class="row flex-lg-row-reverse align-items-center g-5 py-5">
+					<div class="col-10 col-sm-8 col-lg-6">
+						<img
+							src="go.png"
+							class="d-block mx-lg-auto img-fluid"
+							alt="Bootstrap Themes"
+							width="700"
+							height="500"
+							loading="lazy" />
+					</div>
+					<div class="col-lg-6">
+						<h1 class="display-5 fw-bold lh-1 mb-3">
+							Bring me home, I'm your best Paw!
+						</h1>
+						<p class="lead">
+							The Community Helping Paws is a team of volunteers
+							that build relationships within the community to
+							bring hope and care for dogs that needs a loving
+							family. We are also connecting with dog lovers who
+							do not have access to key services and won't receive
+							them without intervention. Providing dog food, pet
+							care, bath and additional services that our outreach
+							team brings. By working together, we can make a
+							difference in the lives of animals in need.
+						</p>
+						<div
+							class="d-grid gap-2 d-md-flex justify-content-md-start">
+							<p>
+								<a
+									class="btn btn-lg btn-success"
+									href="contactus.html"
+									>Message Us</a
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+        
+            ` /*html*/)
+		</script>
+	</body>
+</html>

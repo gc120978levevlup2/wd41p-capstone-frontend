@@ -1,0 +1,1505 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>The Book of Psalms</title>
+    
+    <style>
+      /* my CSS styles here */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: lightgray;
+
+      }
+      
+      h1 {
+        font-size: 36px;
+        margin: 0;
+      }
+      .nav-item {
+        font-size: 18px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      .search {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        margin-right: 20px;
+      }
+      .psalm-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .psalm-button {
+        background-color: lightgray;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .psalm {
+        margin: 20px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        display: none;
+        min-height: 570px;
+      }
+      .active {
+        display: block;
+      }
+      
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 8px;
+        text-align: center;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 14px;
+      }
+    
+    </style>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+    </style>
+
+  <style>
+    body {
+      background-image: url('img/psalm23_cover3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
+    }
+  </style>
+
+  </head>
+    
+<body>
+    <header>
+      <h1>The Book of Psalms</h1>
+      
+      <div>
+        <span class="nav-item" id="home-button">Home</span>
+        <!-- Trigger/Open The Modal -->
+        <span class="nav-item" id="myBtn">About</span>
+
+        <input type="text" class="search" placeholder="Search" />
+      </div>
+    </header>
+
+   
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <b>The Psalms</b> Book of the Old Testament composed of sacred songs, or of sacred poems meant to be sung. In the Hebrew Bible, Psalms begins the third and last section of the biblical canon, known as the Writings (Hebrew Ketuvim).
+
+<p>In the original Hebrew text the book as a whole was not named, although the titles of many individual psalms contained the word mizmor, meaning a poem sung to the accompaniment of a stringed instrument. The Greek translation of this term, psalmos, is the basis for the collective title Psalmoi found in most manuscripts, from which the English name Psalms is derived. A variant translation found in a 5th-century manuscript of the Septuagint is Psaltērion, whence the English name Psalter, which is often used as an alternative name for the Book of Psalms or for a separate collection of psalms intended for liturgical use. Rabbinic literature uses the title Tehillim (“Songs of Praise”), a curious hybrid of a feminine noun and a masculine plural ending.
+
+<p>In its present form, the book of Psalms consists of 150 poems divided into five books (1–41, 42–72, 73–89, 90–106, 107–150), the first four of which are marked off by concluding doxologies. Psalm 150 serves as a doxology for the entire collection. This specific numbering follows the Hebrew Bible; slight variations, such as conjoined or subdivided psalms, occur in other versions. The fivefold division is perhaps meant to be an imitation of the Pentateuch (the first five books of the Old Testament), suggesting that the book reached its present form through liturgical use.
+
+<p>
+The psalms also had a profound effect on the development of Christian worship. Saint Luke believed the psalms to be a source of guidance. Obeying Saint Paul’s call to “sing psalms and hymns and spiritual songs,” the early Church chanted or sang psalms as part of the liturgy. After the Reformation, psalms were set to traditional melodies for congregational singing.</p>
+  
+</div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+    <!-- HTML contents here -->
+    <div class="slideshow-container"></div>
+    <div class="psalm-buttons">
+      <div class="mySlides"></div>
+      <button class="psalm-button" data-psalm="1">Psalm 1</button>
+      <div class="mySlides"></div>
+      <button class="psalm-button" data-psalm="2">Psalm 2</button>
+      <div class="mySlides"></div>
+      <button class="psalm-button" data-psalm="3">Psalm 3</button>
+      <button class="psalm-button" data-psalm="4">Psalm 4</button>
+      <button class="psalm-button" data-psalm="5">Psalm 5</button>
+      <button class="psalm-button" data-psalm="6">Psalm 6</button>
+      <button class="psalm-button" data-psalm="7">Psalm 7</button>
+      <button class="psalm-button" data-psalm="8">Psalm 8</button>
+      <button class="psalm-button" data-psalm="9">Psalm 9</button>
+      <button class="psalm-button" data-psalm="10">Psalm 10</button>
+      <button class="psalm-button" data-psalm="11">Psalm 11</button>
+      <button class="psalm-button" data-psalm="12">Psalm 12</button>
+      <button class="psalm-button" data-psalm="13">Psalm 13</button>
+      <button class="psalm-button" data-psalm="14">Psalm 14</button>
+      <button class="psalm-button" data-psalm="15">Psalm 15</button>
+      <button class="psalm-button" data-psalm="16">Psalm 16</button>
+      <button class="psalm-button" data-psalm="17">Psalm 17</button>
+      <button class="psalm-button" data-psalm="18">Psalm 18</button>
+      <button class="psalm-button" data-psalm="19">Psalm 19</button>
+      <button class="psalm-button" data-psalm="20">Psalm 20</button>
+      <button class="psalm-button" data-psalm="21">Psalm 21</button>
+      <button class="psalm-button" data-psalm="22">Psalm 22</button>
+      <button class="psalm-button" data-psalm="23">Psalm 23</button>
+      <button class="psalm-button" data-psalm="24">Psalm 24</button>
+      <button class="psalm-button" data-psalm="25">Psalm 25</button>
+      <button class="psalm-button" data-psalm="26">Psalm 26</button>
+      <button class="psalm-button" data-psalm="27">Psalm 27</button>
+      <button class="psalm-button" data-psalm="28">Psalm 28</button>
+      <button class="psalm-button" data-psalm="29">Psalm 29</button>
+      <button class="psalm-button" data-psalm="30">Psalm 30</button>
+      <button class="psalm-button" data-psalm="31">Psalm 31</button>
+      <button class="psalm-button" data-psalm="32">Psalm 32</button>
+      <button class="psalm-button" data-psalm="33">Psalm 33</button>
+      <button class="psalm-button" data-psalm="34">Psalm 34</button>
+      <button class="psalm-button" data-psalm="35">Psalm 35</button>
+      <button class="psalm-button" data-psalm="36">Psalm 36</button>
+      <button class="psalm-button" data-psalm="37">Psalm 37</button>
+      <button class="psalm-button" data-psalm="38">Psalm 38</button>
+      <button class="psalm-button" data-psalm="39">Psalm 39</button>
+      <button class="psalm-button" data-psalm="40">Psalm 40</button>
+      <button class="psalm-button" data-psalm="41">Psalm 41</button>
+      <button class="psalm-button" data-psalm="42">Psalm 42</button>
+      <button class="psalm-button" data-psalm="43">Psalm 43</button>
+      <button class="psalm-button" data-psalm="44">Psalm 44</button>
+      <button class="psalm-button" data-psalm="45">Psalm 45</button>
+      <button class="psalm-button" data-psalm="46">Psalm 46</button>
+      <button class="psalm-button" data-psalm="47">Psalm 47</button>
+      <button class="psalm-button" data-psalm="48">Psalm 48</button>
+      <button class="psalm-button" data-psalm="49">Psalm 49</button>
+      <button class="psalm-button" data-psalm="50">Psalm 50</button>
+      <button class="psalm-button" data-psalm="51">Psalm 51</button>
+      <button class="psalm-button" data-psalm="52">Psalm 52</button>
+      <button class="psalm-button" data-psalm="53">Psalm 53</button>
+      <button class="psalm-button" data-psalm="54">Psalm 54</button>
+      <button class="psalm-button" data-psalm="55">Psalm 55</button>
+      <button class="psalm-button" data-psalm="56">Psalm 56</button>
+      <button class="psalm-button" data-psalm="57">Psalm 57</button>
+      <button class="psalm-button" data-psalm="58">Psalm 58</button>
+      <button class="psalm-button" data-psalm="59">Psalm 59</button>
+      <button class="psalm-button" data-psalm="60">Psalm 60</button>
+      <button class="psalm-button" data-psalm="61">Psalm 61</button>
+      <button class="psalm-button" data-psalm="62">Psalm 62</button>
+      <button class="psalm-button" data-psalm="63">Psalm 63</button>
+      <button class="psalm-button" data-psalm="64">Psalm 64</button>
+      <button class="psalm-button" data-psalm="65">Psalm 65</button>
+      <button class="psalm-button" data-psalm="66">Psalm 66</button>
+      <button class="psalm-button" data-psalm="67">Psalm 67</button>
+      <button class="psalm-button" data-psalm="68">Psalm 68</button>
+      <button class="psalm-button" data-psalm="69">Psalm 69</button>
+      <button class="psalm-button" data-psalm="70">Psalm 70</button>
+      <button class="psalm-button" data-psalm="71">Psalm 71</button>
+      <button class="psalm-button" data-psalm="72">Psalm 72</button>
+      <button class="psalm-button" data-psalm="73">Psalm 73</button>
+      <button class="psalm-button" data-psalm="74">Psalm 74</button>
+      <button class="psalm-button" data-psalm="75">Psalm 75</button>
+      <button class="psalm-button" data-psalm="76">Psalm 76</button>
+      <button class="psalm-button" data-psalm="77">Psalm 77</button>
+      <button class="psalm-button" data-psalm="78">Psalm 78</button>
+      <button class="psalm-button" data-psalm="79">Psalm 79</button>
+      <button class="psalm-button" data-psalm="80">Psalm 80</button>
+      <button class="psalm-button" data-psalm="81">Psalm 81</button>
+      <button class="psalm-button" data-psalm="82">Psalm 82</button>
+      <button class="psalm-button" data-psalm="83">Psalm 83</button>
+      <button class="psalm-button" data-psalm="84">Psalm 84</button>
+      <button class="psalm-button" data-psalm="85">Psalm 85</button>
+      <button class="psalm-button" data-psalm="86">Psalm 86</button>
+      <button class="psalm-button" data-psalm="87">Psalm 87</button>
+      <button class="psalm-button" data-psalm="88">Psalm 88</button>
+      <button class="psalm-button" data-psalm="89">Psalm 89</button>
+      <button class="psalm-button" data-psalm="90">Psalm 90</button>
+      <button class="psalm-button" data-psalm="91">Psalm 91</button>
+      <button class="psalm-button" data-psalm="92">Psalm 92</button>
+      <button class="psalm-button" data-psalm="93">Psalm 93</button>
+      <button class="psalm-button" data-psalm="94">Psalm 94</button>
+      <button class="psalm-button" data-psalm="95">Psalm 95</button>
+      <button class="psalm-button" data-psalm="96">Psalm 96</button>
+      <button class="psalm-button" data-psalm="97">Psalm 97</button>
+      <button class="psalm-button" data-psalm="98">Psalm 98</button>
+      <button class="psalm-button" data-psalm="99">Psalm 99</button>
+      <button class="psalm-button" data-psalm="100">Psalm 100</button>
+      <button class="psalm-button" data-psalm="101">Psalm 101</button>
+      <button class="psalm-button" data-psalm="102">Psalm 102</button>
+      <button class="psalm-button" data-psalm="103">Psalm 103</button>
+      <button class="psalm-button" data-psalm="104">Psalm 104</button>
+      <button class="psalm-button" data-psalm="105">Psalm 105</button>
+      <button class="psalm-button" data-psalm="106">Psalm 106</button>
+      <button class="psalm-button" data-psalm="107">Psalm 107</button>
+      <button class="psalm-button" data-psalm="108">Psalm 108</button>
+      <button class="psalm-button" data-psalm="109">Psalm 109</button>
+      <button class="psalm-button" data-psalm="110">Psalm 110</button>
+      <button class="psalm-button" data-psalm="111">Psalm 111</button>
+      <button class="psalm-button" data-psalm="112">Psalm 112</button>
+      <button class="psalm-button" data-psalm="113">Psalm 113</button>
+      <button class="psalm-button" data-psalm="114">Psalm 114</button>
+      <button class="psalm-button" data-psalm="115">Psalm 115</button>
+      <button class="psalm-button" data-psalm="116">Psalm 116</button>
+      <button class="psalm-button" data-psalm="117">Psalm 117</button>
+      <button class="psalm-button" data-psalm="118">Psalm 118</button>
+      <button class="psalm-button" data-psalm="119">Psalm 119</button>
+      <button class="psalm-button" data-psalm="120">Psalm 120</button>
+      <button class="psalm-button" data-psalm="121">Psalm 121</button>
+      <button class="psalm-button" data-psalm="122">Psalm 122</button>
+      <button class="psalm-button" data-psalm="123">Psalm 123</button>
+      <button class="psalm-button" data-psalm="124">Psalm 124</button>
+      <button class="psalm-button" data-psalm="125">Psalm 125</button>
+      <button class="psalm-button" data-psalm="126">Psalm 126</button>
+      <button class="psalm-button" data-psalm="127">Psalm 127</button>
+      <button class="psalm-button" data-psalm="128">Psalm 128</button>
+      <button class="psalm-button" data-psalm="129">Psalm 129</button>
+      <button class="psalm-button" data-psalm="130">Psalm 130</button>
+      <button class="psalm-button" data-psalm="131">Psalm 131</button>
+      <button class="psalm-button" data-psalm="132">Psalm 132</button>
+      <button class="psalm-button" data-psalm="133">Psalm 133</button>
+      <button class="psalm-button" data-psalm="134">Psalm 134</button>
+      <button class="psalm-button" data-psalm="135">Psalm 135</button>
+      <button class="psalm-button" data-psalm="136">Psalm 136</button>
+      <button class="psalm-button" data-psalm="137">Psalm 137</button>
+      <button class="psalm-button" data-psalm="138">Psalm 138</button>
+      <button class="psalm-button" data-psalm="139">Psalm 139</button>
+      <button class="psalm-button" data-psalm="140">Psalm 140</button>
+      <button class="psalm-button" data-psalm="141">Psalm 141</button>
+      <button class="psalm-button" data-psalm="142">Psalm 142</button>
+      <button class="psalm-button" data-psalm="143">Psalm 143</button>
+      <button class="psalm-button" data-psalm="144">Psalm 144</button>
+      <button class="psalm-button" data-psalm="145">Psalm 145</button>
+      <button class="psalm-button" data-psalm="146">Psalm 146</button>
+      <button class="psalm-button" data-psalm="147">Psalm 147</button>
+      <button class="psalm-button" data-psalm="148">Psalm 148</button>
+      <button class="psalm-button" data-psalm="149">Psalm 149</button>
+      <button class="psalm-button" data-psalm="150">Psalm 150</button>
+      <!-- End of 150 buttons -->
+    </div>
+    <style>
+      .bold-num {
+        font-weight: bold;
+      }
+    </style>
+    <div class="psalm" id="psalm-1">
+      <div class="mySlides"></div>
+      <h2>Psalm 1</h2>
+
+      <h5>The Righteous and the Wicked Contrasted.</h5>
+      <p>
+        <span class="bold-num">1</span> How blessed is the man who does not walk
+        in the counsel of the wicked, Nor stand in the path of sinners, Nor sit
+        in the seat of scoffers! <span class="bold-num">2</span> But his delight
+        is in the law of the LORD, And in His law he meditates day and night.
+        <span class="bold-num">3</span> He will be like a tree firmly planted by
+        streams of water, Which yields its fruit in its season And its leaf does
+        not wither; And in whatever he does, he prospers.
+        <span class="bold-num">4</span> The wicked are not so, But they are like
+        chaff which the wind drives away.
+        <span class="bold-num">5</span> Therefore * the wicked will not stand in
+        the judgment, Nor sinners in the assembly of the righteous.
+        <span class="bold-num">6</span> For the LORD knows the way of the
+        righteous, But the way of the wicked will perish.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-2">
+      <div class="mySlides"></div>
+      <h2>Psalm 2</h2>
+      <h5>The Reign of the LORD'S Anointed.</h5>
+      <p>
+        <span class="bold-num">1</span> Why are the nations in an uproar And the peoples devising a vain thing? 
+        <span class="bold-num">2</span> The kings of the earth take their stand And the rulers take counsel together Against the LORD and against His Anointed, saying, 
+        <span class="bold-num">3</span> "Let us tear their fetters apart And cast away their cords from us!"
+        <span class="bold-num">4</span> He who sits in the heavens laughs, The Lord scoffs at them. 
+        <span class="bold-num">5</span> Then He will speak to them in His anger And terrify them in His fury, saying,
+        <span class="bold-num">6</span> "But as for Me, I have installed My King Upon Zion, My holy mountain."
+        <span class="bold-num">7</span> "I will surely tell of the decree of the LORD: He said to Me, 'You are My Son, Today I have begotten You.
+        <span class="bold-num">8</span> 'Ask of Me, and I will surely give the nations as Your inheritance, And the very ends of the earth as Your possession.
+        <span class="bold-num">9</span> 'You shall break them with a rod of iron, You shall shatter them like earthenware.' "
+        <span class="bold-num">10</span> Now therefore, O kings, show discernment; Take warning, O judges of the earth. 
+        <span class="bold-num">11</span> Worship the LORD with reverence And rejoice with trembling.
+        <span class="bold-num">12</span> Do homage to the Son, that He not become angry, and you perish in the way, For His wrath may soon be kindled. How blessed are all who take refuge in Him!
+      </p>
+    </div>
+
+    <div class="psalm" id="psalm-3">
+      <h2>Psalm 3</h2>
+      <h5>Morning Prayer of Trust in God.</h5>
+      <p>
+        <span class="bold-num">1</span> O LORD, how my adversaries have increased! Many are rising up against me.
+        <span class="bold-num">2</span> Many are saying of my soul, "There is no deliverance for him in God." Selah.
+        <span class="bold-num">3</span> But You, O LORD, are a shield about me, My glory, and the One who lifts my head.
+        <span class="bold-num">4</span> I was crying to the LORD with my voice, And He answered me from His holy mountain. Selah.
+        <span class="bold-num">5</span> I lay down and slept; I awoke, for the LORD sustains me.
+        <span class="bold-num">6</span> I will not be afraid of ten thousands of people Who have set themselves against me round about.
+        <span class="bold-num">7</span> Arise, O LORD; save me, O my God! For You have smitten all my enemies on the cheek; You have shattered the teeth of the wicked.
+        <span class="bold-num">8</span> Salvation belongs to the LORD; Your blessing be upon Your people! Selah.
+      </p>
+    </div>
+
+    <div class="psalm" id="psalm-4">
+      <h2>Psalm 4</h2>
+      <h5>Evening Prayer of Trust in God.</h5>
+      <p>
+        <span class="bold-num">1</span> Answer me when I call, O God of my righteousness! You have relieved me in my distress; Be gracious to me and hear my prayer.
+        <span class="bold-num">2</span> O sons of men, how long will my honor become a reproach? How long will you love what is worthless and aim at deception? Selah.
+        <span class="bold-num">3</span> But know that the LORD has set apart the godly man for Himself; The LORD hears when I call to Him.
+        <span class="bold-num">4</span> Tremble, and do not sin; Meditate in your heart upon your bed, and be still. Selah.
+        <span class="bold-num">5</span> Offer the sacrifices of righteousness, And trust in the LORD.
+        <span class="bold-num">6</span> Many are saying, "Who will show us any good?" Lift up the light of Your countenance upon us, O LORD!
+        <span class="bold-num">7</span> You have put gladness in my heart, More than when their grain and new wine abound.
+        <span class="bold-num">8</span> In peace I will both lie down and sleep, For You alone, O LORD, make me to dwell in safety.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-5">
+      <h2>Psalm 5</h2>
+      <h5>Prayer for Protection from the Wicked.</h5>
+      <p>
+        <span class="bold-num">1</span> Give ear to my words, O LORD, Consider my groaning.
+        <span class="bold-num">2</span> Heed the sound of my cry for help, my King and my God, For to You I pray.
+        <span class="bold-num">3</span> In the morning, O LORD, You will hear my voice; In the morning I will order my prayer to You and eagerly watch.
+        <span class="bold-num">4</span> For You are not a God who takes pleasure in wickedness; No evil dwells with You.
+        <span class="bold-num">5</span> The boastful shall not stand before Your eyes; You hate all who do iniquity. 
+        <span class="bold-num">6</span> You destroy those who speak falsehood; The LORD abhors the man of bloodshed and deceit.
+        <span class="bold-num">7</span> But as for me, by Your abundant lovingkindness I will enter Your house, At Your holy temple I will bow in reverence for You.
+        <span class="bold-num">8</span> O LORD, lead me in Your righteousness because of my foes; Make Your way straight before me.
+        <span class="bold-num">9</span> There is nothing reliable in what they say; Their inward part is destruction itself. Their throat is an open grave; They flatter with their tongue.
+        <span class="bold-num">10</span> Hold them guilty, O God; By their own devices let them fall! In the multitude of their transgressions thrust them out, For they are rebellious against You.
+        <span class="bold-num">11</span> But let all who take refuge in You be glad, Let them ever sing for joy; And may You shelter them, That those who love Your name may exult in You.
+        <span class="bold-num">12</span> For it is You who blesses the righteous man, O LORD, You surround him with favor as with a shield.
+              </p>
+    </div>
+
+    <div class="psalm" id="psalm-6">
+      <h2>Psalm 6</h2>
+      <h5>Prayer for Mercy in Time of Trouble.</h5>
+      <p>        
+<span class="bold-num">1</span> O LORD, do not rebuke me in Your anger, Nor chasten me in Your wrath.
+<span class="bold-num">2</span> Be gracious to me, O LORD, for I am pining away; Heal me, O LORD, for my bones are dismayed.
+<span class="bold-num">3</span> And my soul is greatly dismayed; But You, O LORD -how long *?
+<span class="bold-num">4</span> Return, O LORD, rescue my soul; Save me because of Your lovingkindness.
+<span class="bold-num">5</span> For there is no mention of You in death; In Sheol who will give You thanks?
+<span class="bold-num">6</span> I am weary with my sighing; Every night I make my bed swim, I dissolve my couch with my tears.
+<span class="bold-num">7</span> My eye has wasted away with grief; It has become old because of all my adversaries.
+<span class="bold-num">8</span> Depart from me, all you who do iniquity, For the LORD has heard the voice of my weeping.
+<span class="bold-num">9</span> The LORD has heard my supplication, The LORD receives my prayer.
+<span class="bold-num">10</span> All my enemies will be ashamed and greatly dismayed; They shall turn back, they will suddenly be ashamed.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-7">
+      <h2>Psalm 7</h2>
+      <h5>The LORD Implored to Defend the Psalmist against the Wicked.</h5>
+      <p>
+        <span class="bold-num">1</span> LORD my God, in You I have taken refuge;
+        Save me from all those who pursue me, and deliver me,
+        <span class="bold-num">2</span> Or he will tear my soul like a lion,
+        Dragging me away, while there is none to deliver.
+        <span class="bold-num">3</span> O LORD my God, if I have done this, If
+        there is injustice in my hands, <span class="bold-num">4</span> If I
+        have rewarded evil to my friend, Or have plundered him who without cause
+        was my adversary, <span class="bold-num">5</span> Let the enemy pursue
+        my soul and overtake it; And let him trample my life down to the ground
+        And lay my glory in the dust. Selah.
+        <span class="bold-num">6</span> Arise, O LORD, in Your anger; Lift up
+        Yourself against the rage of my adversaries, And arouse Yourself for me;
+        You have appointed judgment. <span class="bold-num">7</span> Let the
+        assembly of the peoples encompass You, And over them return on high.
+        <span class="bold-num">8</span> The LORD judges the peoples; Vindicate
+        me, O LORD, according to my righteousness and my integrity that is in
+        me. <span class="bold-num">9</span> O let the evil of the wicked come to
+        an end, but establish the righteous; For the righteous God tries the
+        hearts and minds. <span class="bold-num">10</span> My shield is with
+        God, Who saves the upright in heart.
+        <span class="bold-num">11</span> God is a righteous judge, And a God who
+        has indignation every day. <span class="bold-num">12</span> If a man
+        does not repent, He will sharpen His sword; He has bent His bow and made
+        it ready. <span class="bold-num">13</span> He has also prepared for
+        Himself deadly weapons; He makes His arrows fiery shafts.
+        <span class="bold-num">14</span> Behold, he travails with wickedness,
+        And he conceives mischief and brings forth falsehood.
+        <span class="bold-num">15</span> He has dug a pit and hollowed it out,
+        And has fallen into the hole which he made.
+        <span class="bold-num">16</span> His mischief will return upon his own
+        head, And his violence will descend upon his own pate.
+        <span class="bold-num">17</span> I will give thanks to the LORD
+        according to His righteousness And will sing praise to the name of the
+        LORD Most High.
+      </p>
+    </div>
+
+    <div class="psalm" id="psalm-8">
+      <h2>Psalm 8</h2>
+      <h5>The LORD'S Glory and Man's Dignity.</h5>
+      <p>
+        <span class="bold-num">1</span> LORD, our Lord, How majestic is Your
+        name in all the earth, Who have displayed Your splendor above the
+        heavens! <span class="bold-num">2</span> From the mouth of infants and
+        nursing babes You have established strength Because of Your adversaries,
+        To make the enemy and the revengeful cease.
+        <span class="bold-num">3</span> When I consider Your heavens, the work
+        of Your fingers, The moon and the stars, which You have ordained;
+        <span class="bold-num">4</span> What is man that You take thought of
+        him, And the son of man that You care for him?
+        <span class="bold-num">5</span> Yet You have made him a little lower
+        than God, And You crown him with glory and majesty!
+        <span class="bold-num">6</span> You make him to rule over the works of
+        Your hands; You have put all things under his feet,
+        <span class="bold-num">7</span> All sheep and oxen, And also the beasts
+        of the field, <span class="bold-num">8</span> The birds of the heavens
+        and the fish of the sea, Whatever passes through the paths of the seas.
+        <span class="bold-num">9</span> O LORD, our Lord, How majestic is Your
+        name in all the earth!
+      </p>
+    </div>
+    <div class="psalm" id="psalm-9">
+      <h2>Psalm 9</h2>
+
+      <h5>A Psalm of Thanksgiving for God's Justice.</h5>
+      <p>
+        <span class="bold-num">1</span> I will give thanks to the LORD with all
+        my heart; I will tell of all Your wonders.
+        <span class="bold-num">2</span> I will be glad and exult in You; I will
+        sing praise to Your name, O Most High.
+        <span class="bold-num">3</span> When my enemies turn back, They stumble
+        and perish before You. <span class="bold-num">4</span> For You have
+        maintained my just cause; You have sat on the throne judging
+        righteously. <span class="bold-num">5</span> You have rebuked the
+        nations, You have destroyed the wicked; You have blotted out their name
+        forever and ever. <span class="bold-num">6</span> The enemy has come to
+        an end in perpetual ruins, And You have uprooted the cities; The very
+        memory of them has perished. <span class="bold-num">7</span> But the
+        LORD abides forever; He has established His throne for judgment,
+        <span class="bold-num">8</span> And He will judge the world in
+        righteousness; He will execute judgment for the peoples with equity.
+        <span class="bold-num">9</span> The LORD also will be a stronghold for
+        the oppressed, A stronghold in times of trouble;
+        <span class="bold-num">10</span> And those who know Your name will put
+        their trust in You, For You, O LORD, have not forsaken those who seek
+        You. <span class="bold-num">11</span> Sing praises to the LORD, who
+        dwells in Zion; Declare among the peoples His deeds.
+        <span class="bold-num">12</span> For He who requires blood remembers
+        them; He does not forget the cry of the afflicted.
+        <span class="bold-num">13</span> Be gracious to me, O LORD; See my
+        affliction from those who hate me, You who lift me up from the gates of
+        death, <span class="bold-num">14</span> That I may tell of all Your
+        praises, That in the gates of the daughter of Zion I may rejoice in Your
+        salvation. <span class="bold-num">15</span> The nations have sunk down
+        in the pit which they have made; In the net which they hid, their own
+        foot has been caught. <span class="bold-num">16</span> The LORD has made
+        Himself known; He has executed judgment. In the work of his own hands
+        the wicked is snared. Higgaion Selah.
+        <span class="bold-num">17</span> The wicked will return to Sheol, Even
+        all the nations who forget God. <span class="bold-num">18</span> For the
+        needy will not always be forgotten, Nor the hope of the afflicted perish
+        forever. <span class="bold-num">19</span> Arise, O LORD, do not let man
+        prevail; Let the nations be judged before You.
+        <span class="bold-num">20</span> Put them in fear, O LORD; Let the
+        nations know that they are but men. Selah.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-10">
+      <h2>Psalm 10</h2>
+      <h5>A Prayer for the Overthrow of the Wicked.</h5>
+      <p>
+        <span class="bold-num">1</span> Why do You stand afar off, O LORD? Why
+        do You hide Yourself in times of trouble?
+        <span class="bold-num">2</span> In pride the wicked hotly pursue the
+        afflicted; Let them be caught in the plots which they have devised.
+        <span class="bold-num">2</span> For the wicked boasts of his heart's
+        desire, And the greedy man curses and spurns the LORD.
+        <span class="bold-num">4</span> The wicked, in the haughtiness of his
+        countenance, does not seek Him. All his thoughts are, "There is no God."
+        <span class="bold-num">5</span> His ways prosper at all times; Your
+        judgments are on high, out of his sight; As for all his adversaries, he
+        snorts at them. <span class="bold-num">6</span> He says to himself, "I
+        will not be moved; Throughout all generations I will not be in
+        adversity." <span class="bold-num">7</span> His mouth is full of curses
+        and deceit and oppression; Under his tongue is mischief and wickedness.
+        <span class="bold-num">8</span> He sits in the lurking places of the
+        villages; In the hiding places he kills the innocent; His eyes
+        stealthily watch for the unfortunate. <span class="bold-num">9</span> He
+        lurks in a hiding place as a lion in his lair; He lurks to catch the
+        afflicted; He catches the afflicted when he draws him into his net.
+        <span class="bold-num">10</span> He crouches, he bows down, And the
+        unfortunate fall by his mighty ones. <span class="bold-num">11</span> He
+        says to himself, "God has forgotten; He has hidden His face; He will
+        never see it." <span class="bold-num">12</span> Arise, O LORD; O God,
+        lift up Your hand. Do not forget the afflicted.
+        <span class="bold-num">13</span> Why has the wicked spurned God? He has
+        said to himself, "You will not require it."
+        <span class="bold-num">14</span> You have seen it, for You have beheld
+        mischief and vexation to take it into Your hand. The unfortunate commits
+        himself to You; You have been the helper of the orphan.
+        <span class="bold-num">15</span> Break the arm of the wicked and the
+        evildoer, Seek out his wickedness until You find none.
+        <span class="bold-num">16</span> The LORD is King forever and ever;
+        Nations have perished from His land. <span class="bold-num">17</span> O
+        LORD, You have heard the desire of the humble; You will strengthen their
+        heart, You will incline Your ear <span class="bold-num">18</span> To
+        vindicate the orphan and the oppressed, So that man who is of the earth
+        will no longer cause terror.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-11">
+      <h2>Psalm 11</h2>
+      <h5>The LORD a Refuge and Defense.</h5>
+      <p>
+        <span class="bold-num">1</span> In the LORD I take refuge; How can you
+        say to my soul, "Flee as a bird to your mountain;
+        <span class="bold-num">2</span> For, behold, the wicked bend the bow,
+        They make ready their arrow upon the string To shoot in darkness at the
+        upright in heart. <span class="bold-num">3</span> If the foundations are
+        destroyed, What can the righteous do?"
+        <span class="bold-num">4</span> The LORD is in His holy temple; the
+        LORD'S throne is in heaven; His eyes behold, His eyelids test the sons
+        of men. <span class="bold-num">5</span> The LORD tests the righteous and
+        the wicked, And the one who loves violence His soul hates.
+        <span class="bold-num">6</span> Upon the wicked He will rain snares;
+        Fire and brimstone and burning wind will be the portion of their cup.
+        <span class="bold-num">7</span> For the LORD is righteous, He loves
+        righteousness; The upright will behold His face.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-12">
+      <h2>Psalm 12</h2>
+      <h5>God, a Helper against the Treacherous.</h5>
+      <p>
+        <span class="bold-num">1</span> Help, LORD, for the godly man ceases to
+        be, For the faithful disappear from among the sons of men.
+        <span class="bold-num">2</span> They speak falsehood to one another;
+        With flattering lips and with a double heart they speak.
+        <span class="bold-num">3</span> May the LORD cut off all flattering
+        lips, The tongue that speaks great things;
+        <span class="bold-num">4</span> Who have said, "With our tongue we will
+        prevail; Our lips are our own; who is lord over us?"
+        <span class="bold-num">5</span> "Because of the devastation of the
+        afflicted, because of the groaning of the needy, Now I will arise," says
+        the LORD; "I will set him in the safety for which he longs."
+        <span class="bold-num">6</span> The words of the LORD are pure words; As
+        silver tried in a furnace on the earth, refined seven times.
+        <span class="bold-num">7</span> You, O LORD, will keep them; You will
+        preserve him from this generation forever.
+        <span class="bold-num">8</span> The wicked strut about on every side
+        When vileness is exalted among the sons of men.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-13">
+      <h2>Psalm 13</h2>
+      <h5>Prayer for Help in Trouble.</h5>
+      <p>
+        <span class="bold-num">1</span> How long, O LORD? Will You forget me
+        forever? How long will You hide Your face from me?
+        <span class="bold-num">2</span> How long shall I take counsel in my
+        soul, Having sorrow in my heart all the day? How long will my enemy be
+        exalted over me? <span class="bold-num">3</span> Consider and answer me,
+        O LORD my God; Enlighten my eyes, or I will sleep the sleep of death,
+        <span class="bold-num">4</span> And my enemy will say, "I have overcome
+        him," And my adversaries will rejoice when I am shaken.
+        <span class="bold-num">5</span> But I have trusted in Your
+        lovingkindness; My heart shall rejoice in Your salvation.
+        <span class="bold-num">6</span> I will sing to the LORD, Because He has
+        dealt bountifully with me.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-14">
+      <h2>Psalm 14</h2>
+      <h5>Folly and Wickedness of Men.</h5>
+      <p>
+        <span class="bold-num">1</span> The fool has said in his heart, "There
+        is no God." They are corrupt, they have committed abominable deeds;
+        There is no one who does good. <span class="bold-num">2</span> The LORD
+        has looked down from heaven upon the sons of men To see if there are any
+        who understand, Who seek after God. <span class="bold-num">3</span> They
+        have all turned aside, together they have become corrupt; There is no
+        one who does good, not even one. <span class="bold-num">4</span> Do all
+        the workers of wickedness not know, Who eat up my people as they eat
+        bread, And do not call upon the Lord?
+        <span class="bold-num">5</span> There they are in great dread, For God
+        is with the righteous generation. <span class="bold-num">6</span> You
+        would put to shame the counsel of the afflicted, But the LORD is his
+        refuge. <span class="bold-num">7</span> Oh, that the salvation of Israel
+        would come out of Zion! When the LORD restores His captive people, Jacob
+        will rejoice, Israel will be glad.
+      </p>
+    </div>
+
+    <div class="psalm" id="psalm-15">
+      <h2>Psalm 15</h2>
+      <h5>Description of a Citizen of Zion.</h5>
+      <p>
+        <span class="bold-num">1</span> O LORD, who may abide * in Your tent?
+        Who may dwell on Your holy hill? <span class="bold-num">2</span> He who
+        walks with integrity, and works righteousness, And speaks truth in his
+        heart. <span class="bold-num">3</span> He does not slander with his
+        tongue, Nor does evil to his neighbor, Nor takes up a reproach against
+        his friend; <span class="bold-num">4</span> In whose eyes a reprobate is
+        despised, But who honors those who fear the LORD; He swears to his own
+        hurt and does not change; <span class="bold-num">5</span> He does not
+        put out his money at interest, Nor does he take a bribe against the
+        innocent. He who does these things will never be shaken.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-16">
+      <h2>Psalm 16</h2>
+      <h5>The LORD the Psalmist's Portion in Life and Deliverer in Death.</h5>
+      <p>
+        <span class="bold-num">1</span> Preserve me, O God, for I take refuge in
+        You. <span class="bold-num">2</span> I said to the LORD, "You are my
+        Lord; I have no good besides You." <span class="bold-num">3</span> As
+        for the saints who are in the earth, They are the majestic ones in whom
+        is all my delight. <span class="bold-num">4</span> The sorrows of those
+        who have bartered for another god will be multiplied; I shall not pour
+        out their drink offerings of blood, Nor will I take their names upon my
+        lips. <span class="bold-num">5</span> The LORD is the portion of my
+        inheritance and my cup; You support my lot.
+        <span class="bold-num">6</span> The lines have fallen to me in pleasant
+        places; Indeed, my heritage is beautiful to me.
+        <span class="bold-num">7</span> I will bless the LORD who has counseled
+        me; Indeed, my mind instructs me in the night.
+        <span class="bold-num">8</span> I have set the LORD continually before
+        me; Because He is at my right hand, I will not be shaken.
+        <span class="bold-num">9</span> Therefore my heart is glad and my glory
+        rejoices; My flesh also will dwell securely.
+        <span class="bold-num">10</span> For You will not abandon my soul to
+        Sheol; Nor will You allow Your Holy One to undergo decay.
+        <span class="bold-num">11</span> You will make known to me the path of
+        life; In Your presence is fullness of joy; In Your right hand there are
+        pleasures forever.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-17">
+      <h2>Psalm 17</h2>
+      <h5>Prayer for Protection against Oppressors.</h5>
+      <p>
+        <span class="bold-num">1</span> Hear a just cause, O LORD, give heed to
+        my cry; Give ear to my prayer, which is not from deceitful lips.
+        <span class="bold-num">2</span> Let my judgment come forth from Your
+        presence; Let Your eyes look with equity.
+        <span class="bold-num">3</span> You have tried my heart; You have
+        visited me by night; You have tested me and You find nothing; I have
+        purposed that my mouth will not transgress.
+        <span class="bold-num">4</span> As for the deeds of men, by the word of
+        Your lips I have kept from the paths of the violent.
+        <span class="bold-num">5</span> My steps have held fast to Your paths.
+        My feet have not slipped. <span class="bold-num">6</span> I have called
+        upon You, for You will answer me, O God; Incline Your ear to me, hear my
+        speech. <span class="bold-num">7</span> Wondrously show Your
+        lovingkindness, O Savior of those who take refuge at Your right hand
+        From those who rise up against them.
+        <span class="bold-num">8</span> Keep me as the apple of the eye; Hide me
+        in the shadow of Your wings <span class="bold-num">9</span> From the
+        wicked who despoil me, My deadly enemies who surround me.
+        <span class="bold-num">10</span> They have closed their unfeeling heart,
+        With their mouth they speak proudly.
+        <span class="bold-num">11</span> They have now surrounded us in our
+        steps; They set their eyes to cast us down to the ground.
+        <span class="bold-num">12</span> He is like a lion that is eager to
+        tear, And as a young lion lurking in hiding places.
+        <span class="bold-num">13</span> Arise, O LORD, confront him, bring him
+        low; Deliver my soul from the wicked with Your sword,
+        <span class="bold-num">14</span> From men with Your hand, O LORD, From
+        men of the world, whose portion is in this life, And whose belly You
+        fill with Your treasure; They are satisfied with children, And leave
+        their abundance to their babes. <span class="bold-num">15</span> As for
+        me, I shall behold Your face in righteousness; I will be satisfied with
+        Your likeness when I awake.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-18">
+      <h2>Psalm 18</h2>
+      <h5>The LORD Praised for Giving Deliverance.</h5>
+      <p>
+        <span class="bold-num">1</span> "I love You, O LORD, my strength."
+        <span class="bold-num">2</span> The LORD is my rock and my fortress and
+        my deliverer, My God, my rock, in whom I take refuge; My shield and the
+        horn of my salvation, my stronghold. <span class="bold-num">3</span> I
+        call upon the LORD, who is worthy to be praised, And I am saved from my
+        enemies. <span class="bold-num">4</span> The cords of death encompassed
+        me, And the torrents of ungodliness terrified me.
+        <span class="bold-num">5</span> The cords of Sheol surrounded me; The
+        snares of death confronted me. <span class="bold-num">6</span> In my
+        distress I called upon the LORD, And cried to my God for help; He heard
+        my voice out of His temple, And my cry for help before Him came into His
+        ears. <span class="bold-num">7</span> Then the earth shook and quaked;
+        And the foundations of the mountains were trembling And were shaken,
+        because He was angry. <span class="bold-num">8</span> Smoke went up out
+        of His nostrils, And fire from His mouth devoured; Coals were kindled by
+        it. <span class="bold-num">9</span> He bowed the heavens also, and came
+        down With thick darkness under His feet.
+        <span class="bold-num">10</span> He rode upon a cherub and flew; And He
+        sped upon the wings of the wind. <span class="bold-num">11</span> He
+        made darkness His hiding place, His canopy around Him, Darkness of
+        waters, thick clouds of the skies. <span class="bold-num">12</span> From
+        the brightness before Him passed His thick clouds, Hailstones and coals
+        of fire. <span class="bold-num">13</span> The LORD also thundered in the
+        heavens, And the Most High uttered His voice, Hailstones and coals of
+        fire. <span class="bold-num">14</span> He sent out His arrows, and
+        scattered them, And lightning flashes in abundance, and routed them.
+        <span class="bold-num">15</span> Then the channels of water appeared,
+        And the foundations of the world were laid bare At Your rebuke, O LORD,
+        At the blast of the breath of Your nostrils.
+        <span class="bold-num">16</span> He sent from on high, He took me; He
+        drew me out of many waters. <span class="bold-num">17</span> He
+        delivered me from my strong enemy, And from those who hated me, for they
+        were too mighty for me. <span class="bold-num">18</span> They confronted
+        me in the day of my calamity, But the LORD was my stay.
+        <span class="bold-num">19</span> He brought me forth also into a broad
+        place; He rescued me, because He delighted in me.
+        <span class="bold-num">20</span> The LORD has rewarded me according to
+        my righteousness; According to the cleanness of my hands He has
+        recompensed me. <span class="bold-num">21</span> For I have kept the
+        ways of the LORD, And have not wickedly departed from my God.
+        <span class="bold-num">22</span> For all His ordinances were before me,
+        And I did not put away His statutes from me.
+        <span class="bold-num">23</span> I was also blameless with Him, And I
+        kept myself from my iniquity. <span class="bold-num">24</span> Therefore
+        the LORD has recompensed me according to my righteousness, According to
+        the cleanness of my hands in His eyes.
+        <span class="bold-num">25</span> With the kind You show Yourself kind;
+        With the blameless You show Yourself blameless;
+        <span class="bold-num">26</span> With the pure You show Yourself pure,
+        And with the crooked You show Yourself astute.
+        <span class="bold-num">27</span> For You save an afflicted people, But
+        haughty eyes You abase. <span class="bold-num">28</span> For You light
+        my lamp; The LORD my God illumines my darkness.
+        <span class="bold-num">29</span> For by You I can run upon a troop; And
+        by my God I can leap over a wall. <span class="bold-num">30</span> As
+        for God, His way is blameless; The word of the LORD is tried; He is a
+        shield to all who take refuge in Him.
+        <span class="bold-num">31</span> For who is God, but the LORD? And who
+        is a rock, except our God, <span class="bold-num">32</span> The God who
+        girds me with strength And makes my way blameless?
+        <span class="bold-num">33</span> He makes my feet like hinds' feet, And
+        sets me upon my high places. <span class="bold-num">34</span> He trains
+        my hands for battle, So that my arms can bend a bow of bronze.
+        <span class="bold-num">35</span> You have also given me the shield of
+        Your salvation, And Your right hand upholds me; And Your gentleness
+        makes me great. <span class="bold-num">36</span> You enlarge my steps
+        under me, And my feet have not slipped.
+        <span class="bold-num">37</span> I pursued my enemies and overtook them,
+        And I did not turn back until they were consumed.
+        <span class="bold-num">38</span> I shattered them, so that they were not
+        able to rise; They fell under my feet.
+        <span class="bold-num">39</span> For You have girded me with strength
+        for battle; You have subdued under me those who rose up against me.
+        <span class="bold-num">40</span> You have also made my enemies turn
+        their backs to me, And I destroyed those who hated me.
+        <span class="bold-num">41</span> They cried for help, but there was none
+        to save, Even to the LORD, but He did not answer them.
+        <span class="bold-num">42</span> Then I beat them fine as the dust
+        before * the wind; I emptied them out as the mire of the streets.
+        <span class="bold-num">43</span> You have delivered me from the
+        contentions of the people; You have placed me as head of the nations; A
+        people whom I have not known serve me.
+        <span class="bold-num">44</span> As soon as they hear *, they obey me;
+        Foreigners * submit to me. <span class="bold-num">45</span> Foreigners *
+        fade away, And come trembling out of their fortresses.
+        <span class="bold-num">46</span> The LORD lives, and blessed be my rock;
+        And exalted be the God of my salvation,
+        <span class="bold-num">47</span> The God who executes vengeance for me,
+        And subdues peoples under me. <span class="bold-num">48</span> He
+        delivers me from my enemies; Surely You lift me above those who rise up
+        against me; You rescue me from the violent man.
+        <span class="bold-num">49</span> Therefore * I will give thanks to You
+        among the nations, O LORD, And I will sing praises to Your name.
+        <span class="bold-num">50</span> He gives great deliverance to His king,
+        And shows lovingkindness to His anointed, To David and his descendants
+        forever *.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-19">
+      <h2>Psalm 19</h2>
+      <h5>The Works and the Word of God.</h5>
+      <p>
+        <span class="bold-num">1</span> The heavens are telling of the glory of
+        God; And their expanse is declaring the work of His hands.
+        <span class="bold-num">2</span> Day to day pours forth speech, And night
+        to night reveals knowledge. <span class="bold-num">3</span> There is no
+        speech, nor are there words; Their voice is not heard.
+        <span class="bold-num">4</span> Their line has gone out through all the
+        earth, And their utterances to the end of the world. In them He has
+        placed a tent for the sun, <span class="bold-num">5</span> Which is as a
+        bridegroom coming out of his chamber; It rejoices as a strong man to run
+        his course. <span class="bold-num">6</span> Its rising is from one end
+        of the heavens, And its circuit to the other end of them; And there is
+        nothing hidden from its heat. <span class="bold-num">7</span> The law of
+        the LORD is perfect, restoring the soul; The testimony of the LORD is
+        sure, making wise the simple. <span class="bold-num">8</span> The
+        precepts of the LORD are right, rejoicing the heart; The commandment of
+        the LORD is pure, enlightening the eyes.
+        <span class="bold-num">9</span> The fear of the LORD is clean, enduring
+        forever; The judgments of the LORD are true; they are righteous
+        altogether. <span class="bold-num">10</span> They are more desirable
+        than gold, yes, than much fine gold; Sweeter also than honey and the
+        drippings of the honeycomb. <span class="bold-num">11</span> Moreover,
+        by them Your servant is warned; In keeping them there is great reward.
+        <span class="bold-num">12</span> Who can discern his errors? Acquit me
+        of hidden faults. <span class="bold-num">13</span> Also keep back Your
+        servant from presumptuous sins; Let them not rule over me; Then I will
+        be blameless, And I shall be acquitted of great transgression.
+        <span class="bold-num">14</span> Let the words of my mouth and the
+        meditation of my heart Be acceptable in Your sight, O LORD, my rock and
+        my Redeemer.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-20">
+      <h2>Psalm 20</h2>
+      <h5>Prayer for Victory over Enemies.</h5>
+      <p>
+        <span class="bold-num">1</span> May the LORD answer you in the day of
+        trouble! May the name of the God of Jacob set you securely on high!
+        <span class="bold-num">2</span> May He send you help from the sanctuary
+        And support you from Zion! <span class="bold-num">3</span> May He
+        remember all your meal offerings And find your burnt offering
+        acceptable! Selah. <span class="bold-num">4</span> May He grant you your
+        heart's desire And fulfill all your counsel!
+        <span class="bold-num">5</span> We will sing for joy over your victory,
+        And in the name of our God we will set up our banners. May the LORD
+        fulfill all your petitions. <span class="bold-num">6</span> Now I know
+        that the LORD saves His anointed; He will answer him from His holy
+        heaven With the saving strength of His right hand.
+        <span class="bold-num">7</span> Some boast in chariots and some in
+        horses, But we will boast in the name of the LORD, our God.
+        <span class="bold-num">8</span> They have bowed down and fallen, But we
+        have risen and stood upright. <span class="bold-num">9</span> Save, O
+        LORD; May the King answer us in the day we call.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-21">
+      <h2>Psalm 21</h2>
+      <h5>Praise for Deliverance.</h5>
+      <p>
+        <span class="bold-num">1</span> O LORD, in Your strength the king will
+        be glad, And in Your salvation how greatly he will rejoice!
+        <span class="bold-num">2</span> You have given him his heart's desire,
+        And You have not withheld the request of his lips. Selah.
+        <span class="bold-num">3</span> For You meet him with the blessings of
+        good things; You set a crown of fine gold on his head.
+        <span class="bold-num">4</span> He asked life of You, You gave it to
+        him, Length of days forever and ever.
+        <span class="bold-num">5</span> His glory is great through Your
+        salvation, Splendor and majesty You place upon him.
+        <span class="bold-num">6</span> For You make him most blessed forever;
+        You make him joyful with gladness in Your presence.
+        <span class="bold-num">7</span> For the king trusts in the LORD, And
+        through the lovingkindness of the Most High he will not be shaken.
+        <span class="bold-num">8</span> Your hand will find out all your
+        enemies; Your right hand will find out those who hate you.
+        <span class="bold-num">9</span> You will make them as a fiery oven in
+        the time of your anger; The LORD will swallow them up in His wrath, And
+        fire will devour them. <span class="bold-num">10</span> Their offspring
+        You will destroy from the earth, And their descendants from among the
+        sons of men. <span class="bold-num">11</span> Though they intended evil
+        against You And devised a plot, They will not succeed.
+        <span class="bold-num">12</span> For You will make them turn their back;
+        You will aim with Your bowstrings at their faces.
+        <span class="bold-num">13</span> Be exalted, O LORD, in Your strength;
+        We will sing and praise Your power.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-22">
+      <h2>Psalm 22</h2>
+      <h5>A Cry of Anguish and a Song of Praise.</h5>
+      <p>
+        <span class="bold-num">1</span> My God, my God, why have You forsaken
+        me? Far from my deliverance are the words of my groaning.
+        <span class="bold-num">2</span> O my God, I cry by day, but You do not
+        answer; And by night, but I have no rest.
+        <span class="bold-num">3</span> Yet You are holy, O You who are
+        enthroned upon the praises of Israel. <span class="bold-num">4</span> In
+        You our fathers trusted; They trusted and You delivered them.
+        <span class="bold-num">5</span> To You they cried out and were
+        delivered; In You they trusted and were not disappointed.
+        <span class="bold-num">6</span> But I am a worm and not a man, A
+        reproach of men and despised by the people.
+        <span class="bold-num">7</span> All who see me sneer at me; They
+        separate with the lip, they wag the head, saying,
+        <span class="bold-num">8</span> "Commit yourself to the LORD; let Him
+        deliver him; Let Him rescue him, because He delights in him."
+        <span class="bold-num">9</span> Yet You are He who brought me forth from
+        the womb; You made me trust when upon my mother's breasts.
+        <span class="bold-num">10</span> Upon You I was cast from birth; You
+        have been my God from my mother's womb.
+        <span class="bold-num">11</span> Be not far from me, for trouble is
+        near; For there is none to help. <span class="bold-num">12</span> Many
+        bulls have surrounded me; Strong bulls of Bashan have encircled me.
+        <span class="bold-num">13</span> They open wide their mouth at me, As a
+        ravening and a roaring lion. <span class="bold-num">14</span> I am
+        poured out like water, And all my bones are out of joint; My heart is
+        like wax; It is melted within me. <span class="bold-num">15</span> My
+        strength is dried up like a potsherd, And my tongue cleaves to my jaws;
+        And You lay me in the dust of death.
+        <span class="bold-num">16</span> For dogs have surrounded me; A band of
+        evildoers has encompassed me; They pierced my hands and my feet.
+        <span class="bold-num">17</span> I can count all my bones. They look,
+        they stare at me; <span class="bold-num">18</span> They divide my
+        garments among them, And for my clothing they cast lots.
+        <span class="bold-num">19</span> But You, O LORD, be not far off; O You
+        my help, hasten to my assistance.
+        <span class="bold-num">20</span> Deliver my soul from the sword, My only
+        life from the power of the dog. <span class="bold-num">21</span> Save me
+        from the lion's mouth; From the horns of the wild oxen You answer me.
+        <span class="bold-num">22</span> I will tell of Your name to my
+        brethren; In the midst of the assembly I will praise You.
+        <span class="bold-num">23</span> You who fear the LORD, praise Him; All
+        you descendants of Jacob, glorify Him, And stand in awe of Him, all you
+        descendants of Israel. <span class="bold-num">24</span> For He has not
+        despised nor abhorred the affliction of the afflicted; Nor has He hidden
+        His face from him; But when he cried to Him for help, He heard.
+        <span class="bold-num">25</span> From You comes my praise in the great
+        assembly; I shall pay my vows before those who fear Him.
+        <span class="bold-num">26</span> The afflicted will eat and be
+        satisfied; Those who seek Him will praise the LORD. Let your heart live
+        forever! <span class="bold-num">27</span> All the ends of the earth will
+        remember and turn to the LORD, And all the families of the nations will
+        worship before You. <span class="bold-num">28</span> For the kingdom is
+        the LORD'S And He rules over the nations.
+        <span class="bold-num">29</span> All the prosperous of the earth will
+        eat and worship, All those who go down to the dust will bow before Him,
+        Even he who cannot keep his soul alive.
+        <span class="bold-num">30</span> Posterity will serve Him; It will be
+        told of the Lord to the coming generation.
+        <span class="bold-num">31</span> They will come and will declare His
+        righteousness To a people who will be born, that He has performed it.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-23">
+      <h2>Psalm 23</h2>
+      <h5>The LORD, the Psalmist's Shepherd.</h5>
+      <p>
+        <span class="bold-num">1</span> The LORD is my shepherd, I shall not
+        want. <span class="bold-num">2</span> He makes me lie down in green
+        pastures; He leads me beside quiet waters.
+        <span class="bold-num">3</span> He restores my soul; He guides me in the
+        paths of righteousness For His name's sake.
+        <span class="bold-num">4</span> Even though I walk through the valley of
+        the shadow of death, I fear no evil, for You are with me; Your rod and
+        Your staff, they comfort me <span class="bold-num">5</span> You prepare
+        a table before me in the presence of my enemies; You have anointed my
+        head with oil; My cup overflows. <span class="bold-num">6</span> Surely
+        goodness and lovingkindness will follow me all the days of my life, And
+        I will dwell in the house of the LORD forever.
+      </p>
+    </div>
+    <div class="psalm" id="psalm-24"></div>
+    <div class="psalm" id="psalm-25"></div>
+    <div class="psalm" id="psalm-26"></div>
+    <div class="psalm" id="psalm-27"></div>
+    <div class="psalm" id="psalm-28"></div>
+    <div class="psalm" id="psalm-29"></div>
+    <div class="psalm" id="psalm-30"></div>
+    <div class="psalm" id="psalm-31"></div>
+    <div class="psalm" id="psalm-32"></div>
+    <div class="psalm" id="psalm-33"></div>
+    <div class="psalm" id="psalm-34"></div>
+    <div class="psalm" id="psalm-35"></div>
+    <div class="psalm" id="psalm-36"></div>
+    <div class="psalm" id="psalm-37"></div>
+    <div class="psalm" id="psalm-38"></div>
+    <div class="psalm" id="psalm-39"></div>
+    <div class="psalm" id="psalm-40"></div>
+    <div class="psalm" id="psalm-41"></div>
+    <div class="psalm" id="psalm-42"></div>
+    <div class="psalm" id="psalm-43"></div>
+    <div class="psalm" id="psalm-44"></div>
+    <div class="psalm" id="psalm-45"></div>
+    <div class="psalm" id="psalm-46"></div>
+    <div class="psalm" id="psalm-47"></div>
+    <div class="psalm" id="psalm-48"></div>
+    <div class="psalm" id="psalm-49"></div>
+    <div class="psalm" id="psalm-50"></div>
+    <div class="psalm" id="psalm-51"></div>
+    <div class="psalm" id="psalm-52"></div>
+    <div class="psalm" id="psalm-53"></div>
+    <div class="psalm" id="psalm-54"></div>
+    <div class="psalm" id="psalm-55"></div>
+    <div class="psalm" id="psalm-56"></div>
+    <div class="psalm" id="psalm-57"></div>
+    <div class="psalm" id="psalm-58"></div>
+    <div class="psalm" id="psalm-59"></div>
+    <div class="psalm" id="psalm-60"></div>
+    <div class="psalm" id="psalm-61"></div>
+    <div class="psalm" id="psalm-62"></div>
+    <div class="psalm" id="psalm-63"></div>
+    <div class="psalm" id="psalm-64"></div>
+    <div class="psalm" id="psalm-65"></div>
+    <div class="psalm" id="psalm-66"></div>
+    <div class="psalm" id="psalm-67"></div>
+    <div class="psalm" id="psalm-68"></div>
+    <div class="psalm" id="psalm-69"></div>
+    <div class="psalm" id="psalm-70"></div>
+    <div class="psalm" id="psalm-71"></div>
+    <div class="psalm" id="psalm-72"></div>
+    <div class="psalm" id="psalm-73"></div>
+    <div class="psalm" id="psalm-74"></div>
+    <div class="psalm" id="psalm-75"></div>
+    <div class="psalm" id="psalm-76"></div>
+    <div class="psalm" id="psalm-77"></div>
+    <div class="psalm" id="psalm-78"></div>
+    <div class="psalm" id="psalm-79"></div>
+    <div class="psalm" id="psalm-80"></div>
+    <div class="psalm" id="psalm-81"></div>
+    <div class="psalm" id="psalm-82"></div>
+    <div class="psalm" id="psalm-83"></div>
+    <div class="psalm" id="psalm-84"></div>
+    <div class="psalm" id="psalm-85"></div>
+    <div class="psalm" id="psalm-86"></div>
+    <div class="psalm" id="psalm-87"></div>
+    <div class="psalm" id="psalm-88"></div>
+    <div class="psalm" id="psalm-89"></div>
+    <div class="psalm" id="psalm-90"></div>
+    <div class="psalm" id="psalm-91"></div>
+    <div class="psalm" id="psalm-92"></div>
+    <div class="psalm" id="psalm-93"></div>
+    <div class="psalm" id="psalm-94"></div>
+    <div class="psalm" id="psalm-95"></div>
+    <div class="psalm" id="psalm-96"></div>
+    <div class="psalm" id="psalm-97"></div>
+    <div class="psalm" id="psalm-98"></div>
+    <div class="psalm" id="psalm-99"></div>
+    <div class="psalm" id="psalm-101"></div>
+    <div class="psalm" id="psalm-102"></div>
+    <div class="psalm" id="psalm-103"></div>
+    <div class="psalm" id="psalm-104"></div>
+    <div class="psalm" id="psalm-105"></div>
+    <div class="psalm" id="psalm-106"></div>
+    <div class="psalm" id="psalm-107"></div>
+    <div class="psalm" id="psalm-108"></div>
+    <div class="psalm" id="psalm-109"></div>
+    <div class="psalm" id="psalm-110"></div>
+    <div class="psalm" id="psalm-111"></div>
+    <div class="psalm" id="psalm-112"></div>
+    <div class="psalm" id="psalm-113"></div>
+    <div class="psalm" id="psalm-114"></div>
+    <div class="psalm" id="psalm-115"></div>
+    <div class="psalm" id="psalm-116"></div>
+    <div class="psalm" id="psalm-117"></div>
+    <div class="psalm" id="psalm-118"></div>
+    <div class="psalm" id="psalm-119">
+    <h2>Psalm 119</h2>
+    <h5>Meditations and Prayers Relating to the Law of God.</h5>
+<br>Aleph.<br>
+<span class="bold-num">1</span> How blessed are those whose way is blameless, Who walk in the law of the LORD.
+<span class="bold-num">2</span> How blessed are those who observe His testimonies, Who seek Him with all their heart.
+<span class="bold-num">3</span> They also do no unrighteousness; They walk in His ways.
+<span class="bold-num">4</span> You have ordained Your precepts, That we should keep them diligently.
+<span class="bold-num">5</span> Oh that my ways may be established To keep Your statutes!
+<span class="bold-num">6</span> Then I shall not be ashamed When I look upon all Your commandments.
+<span class="bold-num">7</span> I shall give thanks to You with uprightness of heart, When I learn Your righteous judgments.
+<span class="bold-num">8</span> I shall keep Your statutes; Do not forsake me utterly! 
+<br>Beth.</br>
+<span class="bold-num">9</span> How can a young man keep his way pure? By keeping it according to Your word.
+<span class="bold-num">10</span> With all my heart I have sought You; Do not let me wander from Your commandments.
+<span class="bold-num">11</span> Your word I have treasured in my heart, That I may not sin against You.
+<span class="bold-num">12</span> Blessed are You, O LORD; Teach me Your statutes.
+<span class="bold-num">13</span> With my lips I have told of All the ordinances of Your mouth.
+<span class="bold-num">14</span> I have rejoiced in the way of Your testimonies, As much as in all riches.
+<span class="bold-num">15</span> I will meditate on Your precepts And regard Your ways.
+<span class="bold-num">16</span> I shall delight in Your statutes; I shall not forget Your word.
+<br>Gimel.</br>
+<span class="bold-num">17</span> Deal bountifully with Your servant, That I may live and keep Your word.
+<span class="bold-num">18</span> Open my eyes, that I may behold Wonderful things from Your law.
+<span class="bold-num">19</span> I am a stranger in the earth; Do not hide Your commandments from me.
+<span class="bold-num">20</span> My soul is crushed with longing After Your ordinances at all times.
+<span class="bold-num">21</span> You rebuke the arrogant, the cursed, Who wander from Your commandments.
+<span class="bold-num">22</span> Take away reproach and contempt from me, For I observe Your testimonies.
+<span class="bold-num">23</span> Even though princes sit and talk against me, Your servant meditates on Your statutes.
+<span class="bold-num">24</span> Your testimonies also are my delight; They are my counselors.
+<br>Daleth.</br>
+<span class="bold-num">25</span> My soul cleaves to the dust; Revive me according to Your word.
+<span class="bold-num">26</span> I have told of my ways, and You have answered me; Teach me Your statutes.
+<span class="bold-num">27</span> Make me understand the way of Your precepts, So I will meditate on Your wonders.
+<span class="bold-num">28</span> My soul weeps because of grief; Strengthen me according to Your word.
+<span class="bold-num">29</span> Remove the false way from me, And graciously grant me Your law.
+<span class="bold-num">30</span> I have chosen the faithful way; I have placed Your ordinances before me.
+<span class="bold-num">32</span> I cling to Your testimonies; O LORD, do not put me to shame!
+<span class="bold-num">32</span> I shall run the way of Your commandments, For You will enlarge my heart.
+<br>He.</br>
+<span class="bold-num">33</span> Teach me, O LORD, the way of Your statutes, And I shall observe it to the end.
+<span class="bold-num">34</span> Give me understanding, that I may observe Your law And keep it with all my heart.
+<span class="bold-num">35</span> Make me walk in the path of Your commandments, For I delight in it.
+<span class="bold-num">36</span> Incline my heart to Your testimonies And not to dishonest gain.
+<span class="bold-num">37</span> Turn away my eyes from looking at vanity, And revive me in Your ways.
+<span class="bold-num">38</span> Establish Your word to Your servant, As that which produces reverence for You.
+<span class="bold-num">39</span> Turn away my reproach which I dread, For Your ordinances are good.
+<span class="bold-num">40</span> Behold, I long for Your precepts; Revive me through Your righteousness.
+<br>Vav.</br>
+<span class="bold-num">41</span> May Your lovingkindnesses also come to me, O LORD, Your salvation according to Your word;
+<span class="bold-num">42</span> So I will have an answer * for him who reproaches me, For I trust in Your word.
+<span class="bold-num">43</span> And do not take the word of truth utterly * out of my mouth, For I wait for Your ordinances.
+<span class="bold-num">44</span> So I will keep Your law continually, Forever and ever.
+<span class="bold-num">45</span> And I will walk at liberty, For I seek Your precepts.
+<span class="bold-num">46</span> I will also speak of Your testimonies before kings And shall not be ashamed.
+<span class="bold-num">47</span> I shall delight in Your commandments, Which I love.
+<span class="bold-num">48</span> And I shall lift up my hands to Your commandments, Which I love; And I will meditate on Your statutes.
+<br>Zayin</br>
+<span class="bold-num">49</span> Remember the word to Your servant, In which You have made me hope.
+<span class="bold-num">50</span> This is my comfort in my affliction, That Your word has revived me.
+<span class="bold-num">51</span> The arrogant utterly * deride me, Yet I do not turn aside from Your law.
+<span class="bold-num">52</span> I have remembered Your ordinances from of old, O LORD, And comfort myself.
+<span class="bold-num">53</span> Burning indignation has seized me because of the wicked, Who forsake Your law.
+<span class="bold-num">54</span> Your statutes are my songs In the house of my pilgrimage.
+<span class="bold-num">55</span> O LORD, I remember Your name in the night, And keep Your law.
+<span class="bold-num">56</span> This has become mine, That I observe Your precepts.
+<br>Heth.</br>
+<span class="bold-num">57</span> The LORD is my portion; I have promised to keep Your words.
+<span class="bold-num">58</span> I sought Your favor with all my heart; Be gracious to me according to Your word.
+<span class="bold-num">59</span> I considered my ways And turned my feet to Your testimonies.
+<span class="bold-num">60</span> I hastened and did not delay To keep Your commandments.
+<span class="bold-num">61</span> The cords of the wicked have encircled me, But I have not forgotten Your law.
+<span class="bold-num">62</span> At midnight * I shall rise to give thanks to You Because of Your righteous ordinances.
+<span class="bold-num">63</span> I am a companion of all those who fear You, And of those who keep Your precepts.
+<span class="bold-num">64</span> The earth is full of Your lovingkindness, O LORD; Teach me Your statutes.
+<br>Teth</br>
+<span class="bold-num">65</span> You have dealt well with Your servant, O LORD, according to Your word.
+<span class="bold-num">66</span> Teach me good discernment and knowledge, For I believe in Your commandments.
+<span class="bold-num">67</span> Before I was afflicted I went astray, But now I keep Your word.
+<span class="bold-num">68</span> You are good and do good; Teach me Your statutes.
+<span class="bold-num">69</span> The arrogant have forged a lie against me; With all my heart I will observe Your precepts.
+<span class="bold-num">70</span> Their heart is covered with fat, But I delight in Your law.
+<span class="bold-num">71</span> It is good for me that I was afflicted, That I may learn Your statutes.
+<span class="bold-num">72</span> The law of Your mouth is better to me Than thousands of gold and silver pieces.
+<br>Yodh.</br>
+<span class="bold-num">73</span> Your hands made me and fashioned me; Give me understanding, that I may learn Your commandments.
+<span class="bold-num">74</span> May those who fear You see me and be glad, Because I wait for Your word.
+<span class="bold-num">75</span> I know, O LORD, that Your judgments are righteous, And that in faithfulness You have afflicted me.
+<span class="bold-num">76</span> O may Your lovingkindness comfort me, According to Your word to Your servant.
+<span class="bold-num">77</span> May Your compassion come to me that I may live, For Your law is my delight.
+<span class="bold-num">78</span> May the arrogant be ashamed, for they subvert me with a lie; But I shall meditate on Your precepts.
+<span class="bold-num">79</span> May those who fear You turn to me, Even those who know Your testimonies.
+<span class="bold-num">80</span> May my heart be blameless in Your statutes, So that I will not be ashamed.
+<br>Kaph.</br>
+<span class="bold-num">81</span> My soul languishes for Your salvation; I wait for Your word.
+<span class="bold-num">82</span> My eyes fail with longing for Your word, While I say, "When will You comfort me?"
+<span class="bold-num">83</span> Though I have become like a wineskin in the smoke, I do not forget Your statutes.
+<span class="bold-num">84</span> How many are the days of Your servant? When will You execute judgment on those who persecute me?
+<span class="bold-num">85</span> The arrogant have dug pits for me, Men who are not in accord with Your law.
+<span class="bold-num">86</span> All Your commandments are faithful; They have persecuted me with a lie; help me!
+<span class="bold-num">87</span> They almost destroyed me on earth, But as for me, I did not forsake Your precepts.
+<span class="bold-num">88</span> Revive me according to Your lovingkindness, So that I may keep the testimony of Your mouth.
+<br>Lamedh.</br>
+<span class="bold-num">89</span> Forever, O LORD, Your word is settled in heaven.
+<span class="bold-num">90</span> Your faithfulness continues throughout all generations; You established the earth, and it stands.
+<span class="bold-num">91</span> They stand this day according to Your ordinances, For all things are Your servants.
+<span class="bold-num">92</span> If Your law had not been my delight, Then I would have perished in my affliction.
+<span class="bold-num">93</span> I will never * forget Your precepts, For by them You have revived me.
+<span class="bold-num">94</span> I am Yours, save me; For I have sought Your precepts.
+<span class="bold-num">95</span> The wicked wait for me to destroy me; I shall diligently consider Your testimonies.
+<span class="bold-num">96</span> I have seen a limit to all perfection; Your commandment is exceedingly broad.
+<br>Mem.</br>
+<span class="bold-num">97</span> O how I love Your law! It is my meditation all the day.
+<span class="bold-num">98</span> Your commandments make me wiser than my enemies, For they are ever mine.
+<span class="bold-num">99</span> I have more insight than all my teachers, For Your testimonies are my meditation.
+<span class="bold-num">100</span> I understand more than the aged, Because I have observed Your precepts.
+<span class="bold-num">101</span> I have restrained my feet from every evil way, That I may keep Your word.
+<span class="bold-num">102</span> I have not turned aside from Your ordinances, For You Yourself have taught me.
+<span class="bold-num">103</span> How sweet are Your words to my taste! Yes, sweeter than honey to my mouth!
+<span class="bold-num">104</span> From Your precepts I get understanding; Therefore * I hate every false way.
+<br>Nun.</br>
+<span class="bold-num">105</span> Your word is a lamp to my feet And a light to my path.
+<span class="bold-num">106</span> I have sworn and I will confirm it, That I will keep Your righteous ordinances.
+<span class="bold-num">107</span> I am exceedingly * afflicted; Revive me, O LORD, according to Your word.
+<span class="bold-num">108</span> O accept the freewill offerings of my mouth, O LORD, And teach me Your ordinances.
+<span class="bold-num">109</span> My life is continually in my hand, Yet I do not forget Your law.
+<span class="bold-num">110</span> The wicked have laid a snare for me, Yet I have not gone astray from Your precepts.
+<span class="bold-num">111</span> I have inherited Your testimonies forever, For they are the joy of my heart.
+<span class="bold-num">112</span> I have inclined my heart to perform Your statutes Forever, even to the end.
+<br>Samekh.</br>
+<span class="bold-num">113</span> I hate those who are double-minded, But I love Your law.
+<span class="bold-num">114</span> You are my hiding place and my shield; I wait for Your word.
+<span class="bold-num">115</span> Depart from me, evildoers, That I may observe the commandments of my God.
+<span class="bold-num">116</span> Sustain me according to Your word, that I may live; And do not let me be ashamed of my hope.
+<span class="bold-num">117</span> Uphold me that I may be safe, That I may have regard for Your statutes continually.
+<span class="bold-num">118</span> You have rejected all those who wander from Your statutes, For their deceitfulness is useless.
+<span class="bold-num">119</span> You have removed all the wicked of the earth like dross; Therefore I love Your testimonies.
+<span class="bold-num">120</span> My flesh trembles for fear of You, And I am afraid of Your judgments. Ayin.
+<br>Ayin.</br>
+<span class="bold-num">121</span> I have done justice and righteousness; Do not leave me to my oppressors.
+<span class="bold-num">122</span> Be surety for Your servant for good; Do not let the arrogant oppress me.
+<span class="bold-num">123</span> My eyes fail with longing for Your salvation And for Your righteous word.
+<span class="bold-num">124</span> Deal with Your servant according to Your lovingkindness And teach me Your statutes.
+<span class="bold-num">125</span> I am Your servant; give me understanding, That I may know Your testimonies.
+<span class="bold-num">126</span> It is time for the LORD to act, For they have broken Your law.
+<span class="bold-num">127</span> Therefore * I love Your commandments Above gold, yes, above fine gold.
+<span class="bold-num">128</span> Therefore * I esteem right all Your precepts concerning everything, I hate every false way.
+<br>Pe.</br>
+<span class="bold-num">129</span> Your testimonies are wonderful; Therefore * my soul observes them.
+<span class="bold-num">130</span> The unfolding of Your words gives light; It gives understanding to the simple.
+<span class="bold-num">131</span> I opened my mouth wide and panted, For I longed for Your commandments.
+<span class="bold-num">132</span> Turn to me and be gracious to me, After Your manner with those who love Your name.
+<span class="bold-num">133</span> Establish my footsteps in Your word, And do not let any iniquity have dominion over me.
+<span class="bold-num">134</span> Redeem me from the oppression of man, That I may keep Your precepts.
+<span class="bold-num">135</span> Make Your face shine upon Your servant, And teach me Your statutes.
+<span class="bold-num">136</span> My eyes shed streams of water, Because they do not keep Your law.
+<br>Tsadhe.</br>
+<span class="bold-num">137</span> Righteous are You, O LORD, And upright are Your judgments.
+<span class="bold-num">138</span> You have commanded Your testimonies in righteousness And exceeding faithfulness.
+<span class="bold-num">139</span> My zeal has consumed me, Because my adversaries have forgotten Your words.
+<span class="bold-num">140</span> Your word is very pure, Therefore Your servant loves it.
+<span class="bold-num">141</span> I am small and despised, Yet I do not forget Your precepts.
+<span class="bold-num">142</span> Your righteousness is an everlasting righteousness, And Your law is truth.
+<span class="bold-num">143</span> Trouble and anguish have come upon me, Yet Your commandments are my delight.
+<span class="bold-num">144</span> Your testimonies are righteous forever; Give me understanding that I may live.
+<br>Qoph.</br>
+<span class="bold-num">145</span> I cried with all my heart; answer me, O LORD! I will observe Your statutes.
+<span class="bold-num">146</span> I cried to You; save me And I shall keep Your testimonies.
+<span class="bold-num">147</span> I rise before dawn and cry for help; I wait for Your words.
+<span class="bold-num">147</span> My eyes anticipate the night watches, That I may meditate on Your word.
+<span class="bold-num">149</span> Hear my voice according to Your lovingkindness; Revive me, O LORD, according to Your ordinances.
+<span class="bold-num">150</span> Those who follow after wickedness draw near; They are far from Your law.
+<span class="bold-num">151</span> You are near, O LORD, And all Your commandments are truth.
+<span class="bold-num">152</span> Of old I have known from Your testimonies That You have founded them forever.
+<br>Resh.</br>
+<span class="bold-num">153</span> Look upon my affliction and rescue me, For I do not forget Your law.
+<span class="bold-num">154</span> Plead my cause and redeem me; Revive me according to Your word.
+<span class="bold-num">155</span> Salvation is far from the wicked, For they do not seek Your statutes.
+<span class="bold-num">156</span> Great are Your mercies, O LORD; Revive me according to Your ordinances.
+<span class="bold-num">157</span> Many are my persecutors and my adversaries, Yet I do not turn aside from Your testimonies.
+<span class="bold-num">158</span> I behold the treacherous and loathe them, Because they do not keep Your word.
+<span class="bold-num">159</span> Consider how I love Your precepts; Revive me, O LORD, according to Your lovingkindness.
+<span class="bold-num">160</span> The sum of Your word is truth, And every one of Your righteous ordinances is everlasting.
+<br>Shin.</br>
+<span class="bold-num">161</span> Princes persecute me without cause, But my heart stands in awe of Your words.
+<span class="bold-num">162</span> I rejoice at Your word, As one who finds great spoil.
+<span class="bold-num">163</span> I hate and despise falsehood, But I love Your law.
+<span class="bold-num">164</span> Seven times a day I praise You, Because of Your righteous ordinances.
+<span class="bold-num">165</span> Those who love Your law have great peace, And nothing causes them to stumble.
+<span class="bold-num">166</span> I hope for Your salvation, O LORD, And do Your commandments.
+<span class="bold-num">167</span> My soul keeps Your testimonies, And I love them exceedingly.
+<span class="bold-num">168</span> I keep Your precepts and Your testimonies, For all my ways are before You.
+<br>Tav.</br>
+<span class="bold-num">169</span> Let my cry come before You, O LORD; Give me understanding according to Your word.
+<span class="bold-num">170</span> Let my supplication come before You; Deliver me according to Your word.
+<span class="bold-num">171</span> Let my lips utter praise, For You teach me Your statutes.
+<span class="bold-num">172</span> Let my tongue sing of Your word, For all Your commandments are righteousness.
+<span class="bold-num">173</span> Let Your hand be ready to help me, For I have chosen Your precepts.
+<span class="bold-num">174</span> I long for Your salvation, O LORD, And Your law is my delight.
+<span class="bold-num">175</span> Let my soul live that it may praise You, And let Your ordinances help me.
+<span class="bold-num">176</span> I have gone astray like a lost sheep; seek Your servant, For I do not forget Your commandments.
+</p>
+</div>
+    <div class="psalm" id="psalm-120"></div>
+    <div class="psalm" id="psalm-121"></div>
+    <div class="psalm" id="psalm-122"></div>
+    <div class="psalm" id="psalm-123"></div>
+    <div class="psalm" id="psalm-124"></div>
+    <div class="psalm" id="psalm-125"></div>
+    <div class="psalm" id="psalm-126"></div>
+    <div class="psalm" id="psalm-127"></div>
+    <div class="psalm" id="psalm-128"></div>
+    <div class="psalm" id="psalm-129"></div>
+    <div class="psalm" id="psalm-130"></div>
+    <div class="psalm" id="psalm-131"></div>
+    <div class="psalm" id="psalm-132"></div>
+    <div class="psalm" id="psalm-133"></div>
+    <div class="psalm" id="psalm-134"></div>
+    <div class="psalm" id="psalm-135"></div>
+    <div class="psalm" id="psalm-136"></div>
+    <div class="psalm" id="psalm-137"></div>
+    <div class="psalm" id="psalm-138"></div>
+    <div class="psalm" id="psalm-139"></div>
+    <div class="psalm" id="psalm-140"></div>
+    <div class="psalm" id="psalm-141"></div>
+    <div class="psalm" id="psalm-142"></div>
+    <div class="psalm" id="psalm-143"></div>
+    <div class="psalm" id="psalm-144"></div>
+    <div class="psalm" id="psalm-145"></div>
+    <div class="psalm" id="psalm-146"></div>
+    <div class="psalm" id="psalm-147"></div>
+    <div class="psalm" id="psalm-148"></div>
+    <div class="psalm" id="psalm-149"></div>
+    <div class="psalm" id="psalm-150"></div>
+
+
+    <script>
+      // Get all the Psalm buttons
+      const psalmButtons = document.querySelectorAll(".psalm-button");
+
+      // Get all the Psalms
+      const psalms = document.querySelectorAll(".psalm");
+
+      // Get the home button
+      const homeButton = document.querySelector("#home-button");
+
+      // Show a Psalm and hide buttons when a button is clicked
+      psalmButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          // Hide all Psalms
+          psalms.forEach((psalm) => {
+            psalm.style.display = "none";
+            psalm.classList.remove("active");
+          });
+          psalmButtons.forEach((b) => {
+            b.style.display = "none";
+          });
+
+          // Show the corresponding Psalm
+          const psalmId = `psalm-${event.target.dataset.psalm}`;
+          const psalm = document.querySelector(`#${psalmId}`);
+          psalm.style.display = "block";
+          psalm.classList.add("active");
+        });
+      });
+
+      // Show all Psalms and buttons when home is clicked
+      homeButton.addEventListener("click", (event) => {
+        psalms.forEach((psalm) => {
+          psalm.style.display = "none";
+          psalm.classList.remove("active");
+        });
+        psalmButtons.forEach((button) => {
+          button.style.display = "block";
+        });
+      });
+    </script>
+
+    <script>
+      // Get the search bar input
+      const searchInput = document.querySelector("#search-input");
+
+      // Get all the Psalms
+
+      // Get all the Psalm buttons
+
+      // Hide all Psalms and buttons on page load
+      psalms.forEach((psalm) => {
+        psalm.style.display = "none";
+      });
+      psalmButtons.forEach((button) => {
+        button.style.display = "none";
+      });
+
+      // Show all Psalm buttons on page load
+      psalmButtons.forEach((button) => {
+        button.style.display = "block";
+      });
+
+      // Show the matching Psalms when the search bar input changes
+      /*
+      searchInput.addEventListener("input", (event) => {
+        const searchTerm = event.target.value.toLowerCase();
+        psalms.forEach((psalm) => {
+          if (psalm.innerText.toLowerCase().includes(searchTerm)) {
+            psalm.style.display = "block";
+          } else {
+            psalm.style.display = "none";
+          }
+        });
+      });
+      */
+    </script>
+    <footer>
+      <p>&copy; 2023 [my mini project] The Book of Psalms</p>
+    </footer>
+    <!-- SLIDE ATTEMPT -->
+    <script>
+      let slideIndex = 1;
+      //showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+    <script src="./data/zdata.js" type="module"></script>
+  </body>
+</html>

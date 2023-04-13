@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta
+			http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>myApp</title>
+		<link
+			rel="shortcut icon"
+			href="/assets/view/img/favicon.jpg"
+			type="image/jpeg" />
+		<!-- custom css -->
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="/assets/view/style/css/main.css" />
+		<style>
+			body {
+				background-image: url("img/psalm23_cover3.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 100%;
+			}
+
+			header {
+				display: flex;
+				align-items: center;
+				padding: 20px;
+				background-color: rgb(116, 113, 113);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- root DOM element to contain the page views later-->
+		<div id="root">
+			<div class="grid-container">
+				<div>
+					<div class="row">
+						<div class="col-md-12" id="header"></div>
+					</div>
+				</div>
+				<div class="container page-body" id="main-body-container">
+					<div
+						class="container"
+						id="main-body"
+						style="
+							overflow: hidden;
+							background-color: rgba(234, 229, 208, 0.51);
+						">
+						<!-- Put more html content here -->
+						<header
+							class="d-flex justify-content-sm-between"
+							style="background-color: rgb(255, 252, 240)">
+							<div
+								class="d-flex flex-wrap justify-content-center">
+								<img
+									class="rounded p-3"
+									height="80px"
+									src="images/logo-no-background-removebg-preview.png"
+									alt="" />
+								&nbsp;&nbsp;
+								<h1 class="text-success m-auto">
+									Local Harvest
+								</h1>
+							</div>
+
+							<div class="width:1250px"></div>
+							<div
+								style="float: right; height: 100%"
+								class="d-flex flex-wrap justify-content-center d-none">
+								<ul class="nav nav-pills">
+									<li class="nav-item">
+										<a
+											href="programs.html"
+											class="nav-link text-black fs-5 fw-bolder"
+											>Programs</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="articles.html"
+											class="nav-link text-black fs-5 fw-bolder"
+											>Articles</a
+										>
+									</li>
+								</ul>
+							</div>
+						</header>
+						<br />
+						<div id="contents"></div>
+					</div>
+				</div>
+				<div>
+					<div class="row">
+						<div class="col-md-12" id="footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jquery javascript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- bootstrap javascript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- supabase API javascript -->
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<!-- controller javascript -->
+		<script type="module">
+			import {
+				user_is_logged_in,
+				user_is_a,
+			} from "/assets/model/local/login_user.js"
+
+			import { menu_view } from "/assets/view/js/sub/menu_view_rl.js"
+			import { footer_view } from "/assets/view/js/sub/footer_view.js"
+
+			let menu_options = [
+				"home",
+				"login",
+				"buyer_signup",
+				"seller_signup",
+				"buyer_about",
+				"buyer_merch",
+			]
+			if (user_is_logged_in()) {
+				if (user_is_a("seller")) {
+					menu_options = [
+						"home",
+						"seller_dashboard",
+						"seller_reg_item",
+						"seller_ord_item",
+						"buyer_about",
+						"buyer_merch",
+						"logout",
+					]
+				} else {
+					menu_options = [
+						"home",
+						"buyer_dashboard",
+						"buyer_checkout",
+						"buyer_about",
+						"buyer_merch",
+						"logout",
+					]
+				}
+			}
+
+			//console.log(menu_options)
+			menu_view("home", menu_options, "header")
+			footer_view("footer")
+			$("#main-body-container").removeClass("container") // remove this to make the container visible
+
+			$("#contents").html(/*html*/ `
+		<!---------------------banner section--------------------------->
+
+		<section id="banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<p class="promo-title">Your Online Fresh Market</p>
+						<p>
+							Local Harvest is an online farmers market that
+							provides customers with a selection of fresh,
+							locally grown produce. We offer a variety of organic
+							and conventional fruits and vegetables that can be
+							ordered online and delivered right to your door. It
+							is also a delicious and healthy choice of fruits and
+							vegetables. With a variety of flavors and textures,
+							you can find something to satisfy everyone's
+							tastebuds. Enjoy the sweet and juice taste of
+							nature's best with local harvest.
+						</p>
+						<a href="#"
+							><img src="images/play.png" class="play-btn" />Watch
+							Reviews</a
+						>
+					</div>
+					<div class="col-md-6 text-center">
+						<img src="images/home2.png" class="img-fluid" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<br />
+		<br />
+
+		<!------------------------Products--------------------------->
+
+		<section id="products">
+            <br>
+            <br>
+            <br>
+			<div class="container text-center">
+				<div class="row">
+					<div class="col-12 textcenter pb-5">
+                        <a href="/assets/module_rl/merchandise.html">
+						<h2 class="section-title">OUR PRODUCTS</h2>
+                        </a>
+						<p class="section-subtitle">
+							Locally grown fruits and vegetables are very
+							important for people to consume. They are fresher
+							and more nutritious because they are picked at the
+							peak of ripeness and don't have to travel long
+							distances to get to market.
+						</p>
+					</div>
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<a
+							href="images/lemon.png"
+							data-lightbox="image"
+							data-title="Lemon">
+							<img
+								src="images/lemon.png"
+								class="img-fluid rounded-3" />
+						</a>
+					</div>
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<a
+							href="images/corn.png"
+							data-lightbox="image"
+							data-title="Corn">
+							<img
+								src="images/corn.png"
+								class="img-fluid rounded-3" />
+						</a>
+					</div>
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<a
+							href="images/cabbage.png"
+							data-lightbox="image"
+							data-title="Cabbage">
+							<img
+								src="images/cabbage.png"
+								class="img-fluid rounded-3" />
+						</a>
+					</div>
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<a
+							href="images/tomatoes.png"
+							data-lightbox="image"
+							data-title="Tomatoes">
+							<img
+								src="images/tomatoes.png"
+								class="img-fluid rounded-3" />
+						</a>
+					</div>
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<a
+							href="images/eggplant.png"
+							data-lightbox="image"
+							data-title="Eggplant">
+							<img
+								src="images/eggplant.png"
+								class="img-fluid rounded-3" />
+						</a>
+					</div>
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<a
+							href="images/potatoes.png"
+							data-lightbox="image"
+							data-title="Potatoes">
+							<img
+								src="images/potatoes.png"
+								class="img-fluid rounded-3" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!----------------Services Section------------------->
+
+		<section id="services">
+            <br>
+			<div class="container text-center">
+				<h1 class="title">WHAT WE DO?</h1>
+				<div class="row text-center">
+					<div class="col-md-4 services">
+						<img src="images/services1.png" class="services-img" />
+						<h4>Online Shopping by mobile phone</h4>
+						<p>
+							Online shopping by mobile phone is a convenient and
+							simple way to purchase items from any store or
+							website. With a mobile phone, users can access a
+							store or website, browse products, make purchases
+							and pay for them securely. The process of online
+							shopping by mobile phone is typically the same as
+							that of a regular online shopping experience, but
+							with the additional convenience of being able to
+							access the store or website from anywhere with a
+							mobile phone. This means that users can shop while
+							they are on the go, whether they are at home or
+							travelling.
+						</p>
+					</div>
+					<div class="col-md-4 services">
+						<img src="images/payment1.png" class="services-img" />
+						<h4>Payment Processing</h4>
+						<p>
+							Secure payment processing for customers and sellers.
+							Payment processing varieties include credit cards,
+							debit cards, e-wallets, bank transfers, and cash on
+							delivery.
+						</p>
+					</div>
+					<div class="col-md-4 services">
+						<img src="images/shipping1.png" class="services-img" />
+						<h4>Shipping & Delivery</h4>
+						<p>
+							Our Shipping and Delivery Policy is designed to
+							provide the best possible experience for our
+							customers. We use a variety of methods to ensure
+							that your orders arrive as quickly and safely as
+							possible right at your doorstep.
+						</p>
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary">
+					All Services
+				</button>
+			</div>
+		</section>
+
+		<!-------------------About Us--------------->
+		<section id="about-us">
+            <br><br><br>
+			<div class="container">
+				<h1 class="title text-center">WHY CHOOSE US?</h1>
+				<div class="row">
+					<div class="col-md-6 about-us">
+						<div class="col-md-6"></div>
+						<p class="about-title">Why we're different</p>
+						<ul>
+							<li>
+								<b>Convenience:</b> Shopping for vegetables and
+								fruits online is much more convenient than going
+								to a store. You can shop from the comfort of
+								your own home, without having to worry about
+								traffic or crowds.
+							</li>
+							<li>
+								<b>Variety:</b> Online marketplaces usually have
+								a much wider selection of fruits and vegetables
+								than any physical store. You can find rare and
+								exotic varieties that you likely wouldn't find
+								in a regular grocery store.
+							</li>
+							<li>
+								<b>Quality:</b> Online marketplaces often have
+								better quality produce than what you'd find in
+								stores. This is because they have more stringent
+								quality control practices in place
+							</li>
+							<li>
+								<b>Price:</b> Online marketplaces tend to have
+								lower prices than traditional stores, due to
+								their lack of overhead costs such as rent,
+								utilities, and staffing.
+							</li>
+							<li>
+								<b>Delivery:</b> Many online marketplaces offer
+								delivery services, so you don't even have to
+								leave your house to get fresh produce.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!------------------Testimonials----------------------------->
+
+		<section id="testimonials">
+            <br><br><br>
+			<div class="container">
+				<h1 class="title text-center">WHAT CLIENTS SAY?</h1>
+				<div clas="row offset-1">
+					<div class="col-md-5 testimonials">
+						<p>
+							As a small business owner, I appreciate the low
+							prices and wide selection of fresh fruits and
+							vegetables offered by this business. Their quality
+							is always top-notch and their customer service is
+							friendly and attentive.!
+						</p>
+						<img src="images/user2.jpg" />
+						<p class="user-details">
+							<b>Jeca</b><br />President of CHRV
+						</p>
+					</div>
+					<div class="col-md-5 testimonials">
+						<p>
+							The vegetable and fruits marketplace has the
+							freshest produce around. I'm so impressed with the
+							selection and quality!
+						</p>
+						<img src="images/user1.jpg" />
+						<p class="user-details">
+							<b>Mark Angelo</b><br />Local buyer
+						</p>
+					</div>
+					<div class="col-md-5 testimonials">
+						<p>
+							I've been a customer of this business for over 5
+							months and I can confidently say that their fruits
+							and vegetables are always fresh and of the highest
+							quality. They have a wide variety of products and
+							the staff is always helpful and friendly. Highly
+							recommend!
+						</p>
+						<img src="images/user3.jpg" />
+						<p class="user-details">
+							<b>Kenneth Joe Tham</b><br />CEO of XYZ
+						</p>
+					</div>
+					<div class="col-md-5 testimonials">
+						<p>
+							I'm always impressed with the selection of fresh
+							fruits and vegetables this business offers. They
+							have the best prices in town and the quality of
+							their produce is unmatched. I'm a regular customer
+							and I highly recommend their services!
+						</p>
+						<img src="images/user4.jpg" />
+						<p class="user-details">
+							<b>Jigs Jordison</b><br />Director of MV marketing
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-----------Social Media section------------>
+		<section id="social-media">
+			<div class="container text-center">
+				<p>FIND US ON SOCIAL MEDIA</p>
+				<div class="social-icons">
+					<a href="#"><img src="images/facebook-icon.png" /></a>
+					<a href="#"><img src="images/instagram-icon.png" /></a>
+					<a href="#"><img src="images/twitter-icon.png" /></a>
+					<a href="#"><img src="images/whatsapp-icon.png" /></a>
+				</div>
+			</div>
+		</section>
+
+		<!--------------footer section--------------->            
+		<section id="footer1">
+            <br><br><br>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 footer-box">
+						<img
+							src="images/logo-no-background-removebg-preview.png" />
+						<p>
+							Local Harvest is an online farmers market that
+							provides customers with a selection of fresh,
+							locally grown produce. We offer a variety of organic
+							and conventional fruits and vegetables that can be
+							ordered online and delivered right to your door.
+						</p>
+					</div>
+					<div class="col-md-4 footer-box">
+						<p><b>Contact Us</b></p>
+						<p>
+							<i class="fa fa-map-marker"></i>Langkaan II
+							Dasmarinas, Cavite, 41140
+						</p>
+						<p><i class="fa fa-phone"></i>+046 440 5023</p>
+						<p>
+							<i class="fa fa-envelope-o"></i
+							>localharvest@gmail.com
+						</p>
+					</div>
+
+					<div class="col-md-4 footer-box">
+						<p><b>Get Updated</b></p>
+						<div class="container">
+							<div class="row">
+								<form action="#">
+									<div class="email">
+										<div class="text">Email *</div>
+										<input type="email" required />
+									</div>
+									<div class="msg">
+										<div class="text">Message *</div>
+										<textarea
+											rows="2"
+											cols="25"
+											required></textarea>
+									</div>
+									<div class="form-submit-btn">
+										<button class="btn btn-outline-success" >Send</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<p class="copyright">
+						Created By rslogdat | © 2023 All rights reserved
+					</p>
+				</div>
+			</div>
+		</section>
+		
+        
+            ` /*html*/)
+		</script>
+	</body>
+</html>
