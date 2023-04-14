@@ -20,7 +20,7 @@ function showModal_with_data(modal_form, on_show_is_done){
     on_show_is_done()
 }
 */
-const backend_site = "http://localhost"
+const backend_site = "https://www.garrymcacho.com"
 function getRating(rating) {
 	let ret = ""
 	for (let i = 0; i < rating; i++) {
