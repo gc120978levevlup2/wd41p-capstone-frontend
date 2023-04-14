@@ -1785,7 +1785,7 @@ const SellerProducts = () => {
 														Close
 													</button>
 													<button
-														className={`btn btn-primary ${save_btn_hide}`}
+														className={`btn btn-primary`}
 														onClick={() =>
 															saveModProduct()
 														}>
