@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Calculator</title>
+</head>
+<body>
+    
+    <form name="myform">
+        <p id="input">Enter First Number: <input id="first">
+            <br/><br/>
+            Enter Second Number: <input id="second"></p>
+          <div class="row">
+    </div>  
+        <div class="row">
+            <input type="button" name="" value="ADD" onclick="add()">
+            <input type="button" name="" value="SUBTRACT" onclick="subtract()">
+            <input type="button" name="" value="MULTIPLY" onclick="multiply()">
+            <input type="button" name="" value="DIVIDE" onclick="divide()">
+        </div>
+        <p>The Result is:</p>
+        <p id="result"></p>
+    </form>
+
+    <script type="text/javascript">
+
+        let result=document.getElementById("result")
+        function add(){
+            first=parseInt(myform.first.value);
+            second=parseInt(myform.second.value);
+            sum=first+second;
+            result.innerHTML=sum
+        }
+        function subtract(){
+            first=parseInt(myform.first.value);
+            second=parseInt(myform.second.value);
+            sum=first-second;
+            myform.result.value=result;
+        }
+        function multiply(){
+            first=parseInt(myform.first.value);
+            second=parseInt(myform.second.value);
+            sum=first*second;
+            myform.result.value=result;
+        }
+        function divide(){
+            first=parseInt(myform.first.value);
+            second=parseInt(myform.second.value);
+            sum=first/second;
+            myform.result.value=result.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

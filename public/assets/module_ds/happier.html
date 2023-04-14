@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta
+			http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>myApp</title>
+		<link
+			rel="shortcut icon"
+			href="/assets/view/img/favicon.jpg"
+			type="image/jpeg" />
+		<!-- custom css -->
+		<link rel="stylesheet" href="/assets/view/style/css/main.css" />
+		<style>
+			body {
+				background-image: url("img/psalm23_cover3.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				height: 100%;
+			}
+
+			header {
+				display: flex;
+				align-items: center;
+				padding: 20px;
+				background-color: rgb(116, 113, 113);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- root DOM element to contain the page views later-->
+		<div id="root">
+			<div class="grid-container">
+				<div>
+					<div class="row">
+						<div class="col-md-12" id="header"></div>
+					</div>
+				</div>
+				<div class="container page-body" id="main-body-container">
+					<div
+						class="container"
+						id="main-body"
+						style="
+							overflow: hidden;
+							background-color: rgba(234, 229, 208, 0.51);
+						">
+						<!-- Put more html content here -->
+						<header
+							class="d-flex justify-content-sm-between"
+							style="background-color: rgb(255, 252, 240)">
+							<div
+								class="d-flex flex-wrap justify-content-center">
+								<img
+									class="rounded-circle shadow"
+									width="80px"
+									height="80px"
+									src="paws1.jpg"
+									alt="" />
+								&nbsp;&nbsp;
+								<h1 class="text-success m-auto">
+									Community Helping Paws
+								</h1>
+							</div>
+
+							<div class="width:1250px"></div>
+							<div
+								style="float: right; height: 100%"
+								class="d-flex flex-wrap justify-content-center">
+								<ul class="nav nav-pills">
+									<li class="nav-item">
+										<a
+											href="programs.html"
+											class="nav-link text-black fs-5 fw-bolder"
+											>Programs</a
+										>
+									</li>
+									<li class="nav-item">
+										<a
+											href="articles.html"
+											class="nav-link text-black fs-5 fw-bolder"
+											>Articles</a
+										>
+									</li>
+								</ul>
+							</div>
+						</header>
+						<br />
+						<div id="contents"></div>
+					</div>
+				</div>
+				<div>
+					<div class="row">
+						<div class="col-md-12" id="footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- jquery javascript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- bootstrap javascript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- supabase API javascript -->
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<!-- controller javascript -->
+		<script type="module">
+			import {
+				user_is_logged_in,
+				user_is_a,
+			} from "/assets/model/local/login_user.js"
+
+			import { menu_view } from "/assets/view/js/sub/menu_view_ds.js"
+			import { footer_view } from "/assets/view/js/sub/footer_view.js"
+
+			let menu_options = [
+				"home",
+				"login",
+				"buyer_signup",
+				"seller_signup",
+				"buyer_about",
+				"buyer_merch",
+			]
+			if (user_is_logged_in()) {
+				if (user_is_a("seller")) {
+					menu_options = [
+						"home",
+						"seller_dashboard",
+						"seller_reg_item",
+						"seller_ord_item",
+						"buyer_about",
+						"buyer_merch",
+						"logout",
+					]
+				} else {
+					menu_options = [
+						"home",
+						"buyer_dashboard",
+						"buyer_checkout",
+						"buyer_about",
+						"buyer_merch",
+						"logout",
+					]
+				}
+			}
+
+			//console.log(menu_options)
+			menu_view("", menu_options, "header")
+			footer_view("footer")
+			$("#main-body-container").removeClass("container") // remove this to make the container visible
+
+			$("#contents").html(/*html*/ `
+            
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6 mt-3">
+					<img src="happier.png" alt="" class="w-100" />
+					<h2 class="blog-post-title mt-3 mb-1">
+						<strong>Dogs Make People Happier</strong>
+					</h2>
+					<p>
+						Dogs are known to be man's best friend, and for good
+						reason. Research has shown that dogs can make people
+						happier in a variety of ways.
+					</p>
+					<p>
+						Firstly, dogs are social creatures and are often eager
+						to spend time with their owners. This can provide a
+						sense of companionship and reduce feelings of
+						loneliness, which can contribute to happiness.
+					</p>
+					<p>
+						Additionally, dogs have been shown to reduce stress and
+						anxiety in their owners. Interacting with a dog can
+						lower levels of the stress hormone cortisol and increase
+						levels of oxytocin, a hormone associated with happiness
+						and bonding.
+					</p>
+					<p>
+						Dogs can also provide a sense of purpose and
+						responsibility. Caring for a dog requires regular
+						exercise, feeding, and grooming, which can give owners a
+						sense of fulfillment and accomplishment.
+					</p>
+					<p>
+						Finally, dogs are known for their unconditional love and
+						loyalty. This can provide a sense of emotional support
+						and comfort, which can contribute to happiness.
+					</p>
+					<p>
+						Overall, dogs can make people happier by providing
+						companionship, reducing stress and anxiety, giving a
+						sense of purpose and responsibility, and offering
+						unconditional love and loyalty.
+					</p>
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+					<h3 class="pb-2 mb-0 mt-5 fst-italic border-bottom">
+						Related Articles
+					</h3>
+
+					<div class="col p-4 d-flex flex-column position-static">
+						<h3 class="mb-1">
+							<strong
+								>How to Help a Dog With Seperation
+								Anxiety</strong
+							>
+						</h3>
+						<p class="card-text mb-auto">
+							...<strong>Separation anxiety</strong> in
+							<strong>dogs</strong> can be
+							<strong>challenging issue to deal with</strong> ,
+							but there are several things you can do to help your
+							dog overcome it...
+						</p>
+						<a id="title" href="anxiety.html" class="text-success"
+							>Learn More</a
+						>
+					</div>
+
+					<div class="col p-4 d-flex flex-column position-static">
+						<h3 class="mb-1">
+							<strong>Pets Help People and Communities</strong>
+						</h3>
+						<div class="mb-1 text-black">
+							<i
+								>This article is an
+								<strong>EXCERPT</strong> from
+								<a class="text-success" href="#"
+									>PetMD's Website.</a
+								>
+								<br />Published on May 25, 2015</i
+							>
+						</div>
+						<p class="card-text mb-auto">
+							...pets<strong> help people and communities</strong>
+							the health benefits for individuals who own pets
+							have been well documented petting an animal reduces
+							a persons blood pressure dog owners get more
+							exercise than nondog owners after heart attack death
+							rates are lower in <strong>pet</strong> owning
+							versus nonpet owning patients...
+						</p>
+						<a href="articles.html#title" class="text-success"
+							>Learn More</a
+						>
+					</div>
+
+					<div class="col p-4 d-flex flex-column position-static">
+						<h3 class="mb-1"><strong>Marking in Dogs</strong></h3>
+						<p class="card-text mb-auto">
+							...<strong>marking</strong> in<strong> dogs</strong>
+							you may wonder why your dog is urinating in so many
+							places when you take them out for a walk this type
+							of behaviour is knowns as urine
+							<strong>marking</strong> . Urine
+							<strong> marking</strong> in
+							<strong> dogs</strong> is a natural behavior where
+							<strong> dogs</strong> release small amount of urine
+							in various location both male and female mark but
+							...
+						</p>
+						<a href="markingdogs.html" class="text-success"
+							>Learn More</a
+						>
+					</div>
+
+					<div class="col p-4 d-flex flex-column position-static">
+						<h3 class="mb-1">
+							<strong
+								>Why Does My Dog Follow Me Everywhere</strong
+							>
+						</h3>
+						<p class="card-text mb-auto">
+							...<strong>why does</strong> my
+							<strong>dog follow</strong> me
+							<strong>everywhere</strong>. We've all had the
+							experience, you walk to the kitchen to refill your
+							drink and your little shadow is underfoot or you
+							head into the bathroom only to find a curious nose
+							pushing the door open behind you...
+						</p>
+						<a href="dogfollows.html" class="text-success"
+							>Learn More</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        
+            ` /*html*/)
+
+			window.location = "#title"
+		</script>
+	</body>
+</html>

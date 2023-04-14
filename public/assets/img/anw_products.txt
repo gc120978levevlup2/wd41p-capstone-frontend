@@ -1,0 +1,1332 @@
+link 
+https://www.amazon.com/s?k=pet+care+products+for+dogs&crid=3L5T9V7RTTH4F&sprefix=pet+care%2Caps%2C450&ref=nb_sb_ss_ts-doa-p_2_8
+
+[
+			{
+				on_sale: true,
+				description: "Guzekier Pet Dog Grooming Hammock Harness",
+				specs: "for Cats & Dogs, Dog Sling for Grooming, Dog Hammock Restraint Bag with Nail Clippers/Trimmer, Nail File, Pet",
+				unit_price: 1600,
+				discount_p: 25,
+				qty: 100,
+				sold: 20,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0001_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0001_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0001_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0001_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0001_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0001_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0001_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "Bonve Pet Dog Nail Grinder",
+				specs: "Upgraded Cat Dog Nail Trimmers Super Quiet Dog Nail Clipper with 2 Grinding Wheels, USB Rechargeable Pet Nail Clippers for Small",
+				unit_price: 1800,
+				discount_p: 44,
+				qty: 120,
+				sold: 30,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0002_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0002_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0002_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0002_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0002_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0002_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0002_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description:
+					"Vet’s Best Dog Toothbrush and Enzymatic Toothpaste Set",
+				specs: "Teeth Cleaning and Fresh Breath Kit with Dental Care Guide | Vet Formulated",
+				unit_price: 575,
+				discount_p: 15,
+				qty: 0,
+				sold: 100,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0003_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0003_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00008.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0003_00009.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Plaque Banish",
+				specs: "100% Natural Plaque Off & Tartar Remover For Dogs & Cats | Freshen Breath For Dogs & Cats | 6.3oz (180g) | Support Healthy Gums",
+				unit_price: 850,
+				discount_p: 0,
+				qty: 100,
+				sold: 15,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0004_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0004_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0004_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0004_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0004_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0004_00005.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Vet's Best Dental Care Finger Wipes",
+				specs: "Reduces Plaque & Freshens Breath | Teeth Cleaning Finger Wipes for Dogs & Cats | 50 Disposable Wipes",
+				unit_price: 700,
+				discount_p: 0,
+				qty: 100,
+				sold: 18,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0005_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0005_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0005_00008.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "HOP Home of Paws Short Hair Dog Brush",
+				specs: "Pet Brushing Comb for Short Hair Coats – Detangling and Shedding Coat Hair Remover",
+				unit_price: 1500,
+				discount_p: 43,
+				qty: 72,
+				sold: 35,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0006_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0006_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0006_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0006_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0006_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0006_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0006_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "HAWATOUR Dog Nail Clippers",
+				specs: "Professional Pet Nail Clipper & Trimmers with Safety Guard to Avoid Over Cutting, Grooming Razor with Nail File for Medium and Large Dog and Cat, Red",
+				unit_price: 400,
+				discount_p: 0,
+				qty: 110,
+				sold: 50,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0007_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0007_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0007_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0007_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0007_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0007_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0007_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Wawash Pet Care Shampoo",
+				specs: "Oatmeal & Coconut Dog Shampoo, Natural Dog Shampoo for Itchy & Dry Skin Relief. 16 Fl. Oz",
+				unit_price: 750,
+				discount_p: 0,
+				qty: 80,
+				sold: 20,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0008_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0008_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0008_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0008_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0008_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0008_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0008_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "WashBar Natural Dog Soap Bar",
+				specs: "Natural Dog Shampoo Bar and Dog Shampoo for Smelly Dogs with Sensitive Skin, Easier to Use Than Liquid Pet Shampoo with No Plastic Bottle Waste, 2-Pack",
+				unit_price: 850,
+				discount_p: 0,
+				qty: 80,
+				sold: 25,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0009_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0009_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0009_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0009_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0009_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0009_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0009_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0009_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "ROPO Dog Grooming Brush",
+				specs: "Pet Shampoo Bath Brush Soothing Massage Rubber Comb with Adjustable Ring Handle for Long Short Haired Dogs and Cats 2pcs",
+				unit_price: 400,
+				discount_p: 0,
+				qty: 100,
+				sold: 50,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0010_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0010_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0010_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0010_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0010_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0010_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0010_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "Dexas MudBuster",
+				specs: "Portable Dog Paw Washer/ Paw Cleaner, Medium, Light Gray",
+				unit_price: 1200,
+				discount_p: 24,
+				qty: 60,
+				sold: 15,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0011_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0011_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0011_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0011_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0011_00004.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Bone Dry Pet Grooming Towel",
+				specs: "Collection Absorbent Microfiber X-Large, 41x23.5, Embroidered Hunter Green",
+				unit_price: 950,
+				discount_p: 0,
+				qty: 80,
+				sold: 40,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0012_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0012_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0012_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0012_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0012_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0012_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0012_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description:
+					"Vet's Best Flea and Tick Waterless Bath Foam for Dogs",
+				specs: "Flea Treatment Dry Shampoo for Dogs | Flea Killer with Certified Natural Oils | 8 Ounces",
+				unit_price: 925,
+				discount_p: 5,
+				qty: 50,
+				sold: 10,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0013_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0013_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0013_00008.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Dog and Puppy Potty Disposable Pee Training Pads",
+				specs: "TrainPro Premium Quality - Large 6 Layer Leak-Proof 23” X 23” Pee Mats - 50-Pack",
+				unit_price: 900,
+				discount_p: 0,
+				qty: 200,
+				sold: 110,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0014_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0014_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0014_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0014_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0014_00004.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description:
+					"Vetnique Labs Furbliss Hygienic Pet Wipes for Dogs",
+				specs: "Cleansing Grooming & Deodorizing Hypoallergenic Thick Wipes with All Natural Deoplex Deodorizer (Unscented, 100ct Pouch)",
+				unit_price: 600,
+				discount_p: 0,
+				qty: 150,
+				sold: 80,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0015_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0015_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0015_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0015_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0015_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0015_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0015_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0015_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Modoker Dog Travel Bag",
+				specs: "Weekend Pet Travel Set for Dog and Cat, Airline Approved Tote Organizer with Multi-Function Pockets (Grey)",
+				unit_price: 2150,
+				discount_p: 0,
+				qty: 60,
+				sold: 20,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0016_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0016_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0016_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0016_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0016_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0016_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0016_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "MalsiPree Dog Water Bottle",
+				specs: "Leak Proof Portable Puppy Water Dispenser with Drinking Feeder for Pets Outdoor Walking, Hiking, Travel, Food Grade Plastic (19oz, Blue)",
+				unit_price: 1650,
+				discount_p: 50,
+				qty: 150,
+				sold: 70,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0017_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0017_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0017_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0017_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0017_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0017_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0017_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0017_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "Loving Pets Metallic Bella Bowl",
+				specs: "Dog Bowl, Medium, Artichoke",
+				unit_price: 700,
+				discount_p: 64,
+				qty: 120,
+				sold: 49,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0018_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0018_00001.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Dog Crates for Large Dogs",
+				specs: "Thicken Plush Mat-Foldable Design + Adjustable The Tightness of The Cloth, Dog Crates 39.5inch",
+				unit_price: 7000,
+				discount_p: 0,
+				qty: 25,
+				sold: 7,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0019_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0019_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0019_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0019_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0019_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0019_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0019_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "Dog Bed",
+				specs: "Dog Beds for Large Medium Dogs, Rectangle Washable Dog Bed Comfortable and Breathable Large Dog Bed, Pet Bed",
+				unit_price: 4500,
+				discount_p: 65,
+				qty: 72,
+				sold: 22,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0020_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0020_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0020_00008.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "DCSP Pets Dog Collar",
+				specs: "Heavy-Duty Dog Collar for Small Dogs, Medium and Large – Eco-Friendly Natural Fabric – Durable and Skin-Friendly – Soft Dog Collar for All Breeds – Large, Khaki",
+				unit_price: 550,
+				discount_p: 8,
+				qty: 120,
+				sold: 77,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0021_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0021_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0021_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0021_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0021_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0021_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0021_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0021_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Gorilla Grip Heavy Duty Dog Leash",
+				specs: "Soft Handle, Strong Reflective Rope for Night Walking, Small Medium Large Dogs, Durable Puppy Training Leashes, Rotating Metal Clip, Waste Bag Dispenser, Black",
+				unit_price: 600,
+				discount_p: 0,
+				qty: 150,
+				sold: 100,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0022_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0022_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0022_00008.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "rabbitgoo Tactical Dog Harness for Large Dogs",
+				specs: "Military Dog Harness with Handle, No-Pull Service Dog Vest with Molle & Loop Panels, Adjustable Dog Vest Harness for Training Hunting Walking, Orange, L",
+				unit_price: 2150,
+				discount_p: 0,
+				qty: 50,
+				sold: 11,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0023_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0023_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00008.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0023_00009.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "ANGRY ORANGE Pet Odor Eliminator for Strong Odor",
+				specs: "Citrus Deodorizer for Strong Dog or Cat Pee Smells on Carpet, Furniture & Indoor Outdoor Floors - 24 Fluid Ounces",
+				unit_price: 1000,
+				discount_p: 0,
+				qty: 76,
+				sold: 30,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0024_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0024_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0024_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0024_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0024_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0024_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0024_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Simple Green Outdoor Odor Eliminator",
+				specs: "for Pets, Dogs, Ideal for Artificial Grass & Patio (32 oz Hose End Sprayer & 1 Gallon Refill)",
+				unit_price: 1350,
+				discount_p: 0,
+				qty: 76,
+				sold: 27,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0025_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0025_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0025_00008.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description:
+					"ARCA PET Cat & Dog First Aid Kit Home Office Travel Car",
+				specs: "Emergency Kit Pet Travel Kit – 100 Pieces with Emergency Collar and Pet Thermometer & Mini Pouch (Neon Orange)",
+				unit_price: 2000,
+				discount_p: 13,
+				qty: 48,
+				sold: 21,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0026_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0026_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0026_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0026_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0026_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0026_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0026_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description:
+					"Zeaxuie Heavy Duty Various Dog Chew Toys for Aggressive Chewers",
+				specs: "Pack Value Set Includes Indestructible Rope Toys & Squeaky Toys for Medium, Large & X-Large Breeds (Style-1 Rope Toys)",
+				unit_price: 1800,
+				discount_p: 33,
+				qty: 96,
+				sold: 47,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0027_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0027_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0027_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0027_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0027_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0027_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0027_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0027_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "Dog Chew Toys",
+				specs: "Squeaky Dog Toys for Aggressive Chewers Dog Toothbrush Clean Teeth Durable Dog Toys for Small Medium Larger Breed Rubber Bone",
+				unit_price: 650,
+				discount_p: 8,
+				qty: 115,
+				sold: 86,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0028_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0028_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0028_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0028_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0028_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0028_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0028_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Hisim Interactive Dog Toy Ball",
+				specs: "with Remote Control, LED Lights, Made of Natural Rubber, Wicked Ball, Jumping Activation Ball, Automatic Rolling Ball Toys for Medium/Large Dog USB Rechargeable",
+				unit_price: 2000,
+				discount_p: 0,
+				qty: 24,
+				sold: 6,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0029_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0029_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0029_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0029_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0029_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0029_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0029_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0029_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Qishare Tough Dog Toys",
+				specs: "for Aggressive Chewers Large Breed, Durable Dog Toys for Medium Dogs, Tough Dog Chew Toys for Aggressive Chewers, Interactive Dog Toys for Training and Cleaning",
+				unit_price: 600,
+				discount_p: 0,
+				qty: 72,
+				sold: 23,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0030_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0030_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0030_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0030_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0030_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0030_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0030_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0030_00007.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Finn Skin & Coat Salmon Oil Supplement for Dogs",
+				specs: "Supports Dryness, Itching, & Thick, Shiny Coat | Premium Fish Oil from Wild Alaskan Salmon, Omega-3s, EPA & DHA, Biotin, & Zinc | 90 Soft Chews",
+				unit_price: 1500,
+				discount_p: 0,
+				qty: 12,
+				sold: 4,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0031_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0031_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0031_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0031_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0031_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0031_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0031_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Ready Cal Powder for Dogs",
+				specs: "High-Calorie, Weight Gainer, Appetite Stimulant, Energy Booster Pet Suppliment | 30 Scoops (Scoop Included)",
+				unit_price: 1500,
+				discount_p: 0,
+				qty: 12,
+				sold: 5,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0032_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0032_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0032_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0032_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0032_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0032_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0032_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description:
+					"Potassium Citrate Plus Cranberry Granules 300gm for Cats and Dogs",
+				specs: "Urinary Tract Support-Helps Deter Formation of Calcium Oxalate Stones - Deters Bladder & Kidney Stones ( Made in U.S.A)",
+				unit_price: 1050,
+				discount_p: 0,
+				qty: 12,
+				sold: 5,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0033_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0033_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0033_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0033_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0033_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0033_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0033_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: true,
+				description: "Probiotics for Dogs Digestive Health",
+				specs: "Dog Probiotics and Digestive Enzymes, Prebiotics, Omega-3 & 6 and Vitamin for Dogs, 6 Billion CFUs for Gut Health, Itchy Skin and Immune Support, 120 Chews",
+				unit_price: 1550,
+				discount_p: 26,
+				qty: 12,
+				sold: 8,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0034_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0034_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0034_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0034_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0034_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0034_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0034_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Nulo Functional Powder Dog Cognitive Supplement",
+				specs: "Helps Support Overall Cognitive Health, 60 Servings",
+				unit_price: 1400,
+				discount_p: 0,
+				qty: 12,
+				sold: 4,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0035_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0035_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00006.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00007.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0035_00008.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Pedigree Dentastix",
+				specs: "Large Beef and Original Flavor Bundle, 80 ct.",
+				unit_price: 1424,
+				discount_p: 0,
+				qty: 24,
+				sold: 10,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0036_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0036_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0036_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0036_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0036_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0036_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0036_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Milk-Bone MaroSnacks",
+				specs: "Dog Treats, Beef, 40 Ounce",
+				unit_price: 574,
+				discount_p: 0,
+				qty: 12,
+				sold: 9,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0037_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0037_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0037_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0037_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0037_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0037_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0037_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Good'n'Fun Triple Flavor Kabobs",
+				specs: "Kabobs 48 Ounce, Rawhide Snack For All Dogs",
+				unit_price: 1700,
+				discount_p: 0,
+				qty: 12,
+				sold: 8,
+				review_rate: 5,
+				main_image: "/assets/img/animal_welfare/anw0038_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0038_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0038_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0038_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0038_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0038_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0038_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Merrick Power Bites Dog Treats",
+				specs: "Real Beef Recipe - 6 oz. Bag",
+				unit_price: 837,
+				discount_p: 0,
+				qty: 12,
+				sold: 4,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0039_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0039_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0039_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0039_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0039_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0039_00005.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0039_00006.jpg",
+					},
+				],
+			},
+
+			{
+				on_sale: false,
+				description: "Bocce's Bakery All-Natural, Everyday Dog Treats",
+				specs: "Wheat-Free, Limited-Ingredient, Soft & Chewy Cookies Made in The USA, 6 oz (Say Moo, Sunday Roast, Mud Pie Oh My, Bac 'N Nutty, Quack Quack Quack)",
+				unit_price: 700,
+				discount_p: 0,
+				qty: 12,
+				sold: 5,
+				review_rate: 4,
+				main_image: "/assets/img/animal_welfare/anw0040_00001.jpg",
+				images: [
+					{
+						url: "/assets/img/animal_welfare/anw0040_00001.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0040_00002.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0040_00003.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0040_00004.jpg",
+					},
+					{
+						url: "/assets/img/animal_welfare/anw0040_00005.jpg",
+					},
+				],
+			},
+		]
