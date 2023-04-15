@@ -67,14 +67,15 @@ const SellerSuccessCC = () => {
 				}),
 			})
 
-			// search for the previous sold quantity
-			let prev_sold_qty = 0
+			let prev_prod
 			for (let prod of prods) {
 				if (prod.id === order.product_id) {
-					prev_sold_qty = prod.sold_qty
+					prev_prod = prod
 					break
 				}
 			}
+
+			prev_prod.sold_qty += order.qty
 
 			await fetch(backend_site + "/api/products/" + order.product_id, {
 				method: "PUT",
@@ -83,7 +84,7 @@ const SellerSuccessCC = () => {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					sold_qty: prev_sold_qty + order.qty,
+					sold_qty: prev_prod.sold_qty,
 				}),
 			})
 		}
