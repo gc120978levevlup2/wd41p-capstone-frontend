@@ -303,7 +303,11 @@ const NewSeller = () => {
 						set_profile_picture(response.data.img)
 						set_image_disabled(false)
 						set_image_changed(false)
-						alert(response.msg)
+						setTimeout(() => {
+							alert(response.msg)
+							window.location = "/login"
+						}, 3000)
+
 						//set_participant_id(response.data.id)
 						//console.log(response.data.id)
 						//alert(response.msg)

@@ -7,12 +7,16 @@ const IndexRL = () => {
 			<div
 				id="main-body"
 				style={{
+					position: "relative",
+					zIndex: 100,
 					color: "black",
 					overflow: "hidden",
 					backgroundColor: "rgba(234, 229, 208, 0.51)",
 					padding: "10",
 				}}>
-				<div id="contents">
+				<br />
+				<br />
+				<div id="contents" className="mt-2">
 					<div className="container">
 						<header
 							className="d-flex justify-content-sm-between"

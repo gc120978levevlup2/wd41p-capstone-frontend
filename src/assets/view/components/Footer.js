@@ -105,24 +105,18 @@ const Footer = () => {
 							<h4>Links</h4>
 							<ul className="list-unstyled">
 								<li>
-									<a href="/assets/view/pages/retpol.html">
+									<a href="/retpol">
 										Return &amp; Refund Policy
 									</a>
 								</li>
 								<li>
-									<a href="/assets/view/pages/privpol.html">
-										Privacy Policy
-									</a>
+									<a href="/privpol">Privacy Policy</a>
 								</li>
 								<li>
-									<a href="/assets/view/pages/tos.html">
-										Terms of Service
-									</a>
+									<a href="/tos">Terms of Service</a>
 								</li>
 								<li>
-									<a href="/assets/view/pages/aboutus.html">
-										About Us
-									</a>
+									<a href="/aboutus">About Us</a>
 								</li>
 							</ul>
 						</div>
