@@ -23,6 +23,10 @@ import SellerSuccessCC from "../view/pages/Seller/SellerSuccessCC"
 import UserInfo from "../view/pages/UserInfo"
 import SellerProductsSearch from "../view/pages/Seller/SellerProductsSearch"
 import Index from "../view/pages/Index"
+import Retpol from "../view/pages/Others/Retpol"
+import Privpol from "../view/pages/Others/Privpol"
+import Tos from "../view/pages/Others/Tos"
+import Aboutus from "../view/pages/Others/Aboutus"
 const ReactRouter = () => {
 	return (
 		<BrowserRouter>
@@ -78,6 +82,10 @@ const ReactRouter = () => {
 						element={<BuyerDashboard />}
 					/>
 					<Route path="/buyer_checkout" element={<BuyerCheckout />} />
+					<Route path="/retpol" element={<Retpol />} />
+					<Route path="/privpol" element={<Privpol />} />
+					<Route path="/tos" element={<Tos />} />
+					<Route path="/aboutus" element={<Aboutus />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

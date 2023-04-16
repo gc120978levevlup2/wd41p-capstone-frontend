@@ -32,15 +32,22 @@ const IndexJAC = () => {
 			<div
 				id="main-body"
 				style={{
+					zIndex: 1000,
 					overflow: "hidden",
 					backgroundColor: "rgba(234, 229, 208, 0.51)",
 					padding: "10",
 				}}>
-				<div id="contents">
+				<br />
+				<br />
+				<div id="contents" className="mt-2">
 					<div className="container">
 						<header
 							className="d-flex justify-content-sm-between"
-							style={{ backgroundColor: "rgb(255, 252, 240)" }}>
+							style={{
+								backgroundColor: "rgb(255, 252, 240)",
+								position: "relative",
+								zIndex: 100,
+							}}>
 							<div className="d-flex flex-wrap justify-content-center p-3">
 								<img
 									className="rounded-circle shadow"
@@ -79,6 +86,10 @@ const IndexJAC = () => {
 						<br />
 						{/* Put more html content here in between */}
 						<div
+							style={{
+								position: "relative",
+								zIndex: 10000000000000000000000000000000000000,
+							}}
 							className="row row-cols-md-9 row-cols-lg-10 row-cols-xl-12 row-cols-xxl-12 text-black"
 							id="psalm-buttons">
 							{psalm_search.map((book, i) => (
@@ -92,12 +103,10 @@ const IndexJAC = () => {
 										data-bs-target={`#staticBackdrop2-${book.number}`}>
 										Psalm {book.number}
 									</button>
-
+									{/* Modal */}
 									<div
 										className="modal fade"
 										id={`staticBackdrop2-${book.number}`}
-										data-bs-backdrop="static"
-										data-bs-keyboard="false"
 										tabIndex="-1"
 										aria-labelledby={`#staticBackdropLabel-${book.number}`}
 										aria-hidden="true">

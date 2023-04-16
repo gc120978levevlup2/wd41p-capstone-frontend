@@ -6,11 +6,15 @@ const IndexDS = () => {
 			<div
 				id="main-body"
 				style={{
+					position: "relative",
+					zIndex: 100,
 					overflow: "hidden",
 					backgroundColor: "rgba(234, 229, 208, 0.51)",
-					padding: "10",
+					padding: "50,10,10,10",
 				}}>
-				<div id="contents">
+				<br />
+				<br />
+				<div id="contents" className="mt-2">
 					<div className="container">
 						<header
 							className="d-flex justify-content-sm-between"
