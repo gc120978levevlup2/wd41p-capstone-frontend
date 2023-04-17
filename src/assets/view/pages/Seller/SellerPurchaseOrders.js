@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { read_user } from "../../../model/local/login_user"
 import { backend_site } from "../../../controller/misc/misc"
 
-const SellerOrderSummary = () => {
+const SellerPurchaseOrders = () => {
 	const [total_order_details, set_total_order_details] = useState([])
 	const [total_shift_order_amount, set_total_shift_order_amount] = useState(0)
 	const [xtime, set_xtime] = useState("")
@@ -205,14 +205,15 @@ const SellerOrderSummary = () => {
 				})
 			).json()
 		).data
-		let customers = participants
-		let order_by_cashier = xorders.filter((x) => x.cashier_id === user.id)
+		let customers = participants // assume customers variable as sellers
+		let order_by_cashier = xorders.filter((x) => x.customer_id === user.id) // assume cashier is the purchaser/customer
 		// incorporate customers to order_by_cashier
 
 		for (let order of order_by_cashier) {
 			for (let customer of customers) {
 				console.log("found")
-				if (order.customer_id === customer.id) {
+				if (order.cashier_id === customer.id) {
+					// see the seller identity
 					console.log("found")
 					order.customer = customer
 					break
@@ -220,7 +221,8 @@ const SellerOrderSummary = () => {
 			}
 			if (order.customer) {
 				for (let picture of participant_pictures) {
-					if (order.customer.id === picture.participant_id) {
+					if (order.cashier_id === picture.participant_id) {
+						// get also the picture of the seller
 						console.log("found")
 						order.customer.img = picture.img
 					}
@@ -231,6 +233,7 @@ const SellerOrderSummary = () => {
 		// find latest transaction before shift ends
 		let order_by_shiftend = []
 		for (let xxorder of order_by_cashier) {
+			// order by customer
 			if (xxorder.shiftend === 1) break
 			order_by_shiftend.push(xxorder)
 		}
@@ -268,16 +271,15 @@ const SellerOrderSummary = () => {
 							<div className="col-lg-12">
 								<h2 className="float-start">
 									<i className="bi bi-clipboard2-data"></i>{" "}
-									Orders Summary Timeline
+									Purchases Summary Timeline
 								</h2>
 								<button
 									onClick={() =>
-										(window.location =
-											"/seller_purchase_order")
+										(window.location = "/seller_dashboard")
 									}
 									className="btn btn-outline-success float-end">
-									<i className="bi bi-smartwatch"></i>
-									Purchases Summary
+									<i className="bi bi-smartwatch"></i> Back to
+									Orders Summary
 								</button>
 							</div>
 							<br></br>
@@ -371,10 +373,7 @@ const SellerOrderSummary = () => {
 												<span style={{ fontSize: 11 }}>
 													{xtime}
 												</span>
-												<br />
-												<span className="badge bg-primary border border-warning shadow  mt-2">
-													Cashier in-Charge
-												</span>
+
 												<br />
 												<h6 className="text-capitalize mt-1">
 													<b>
@@ -404,15 +403,9 @@ const SellerOrderSummary = () => {
 															{"order.status" ===
 															1 ? (
 																<>
-																	<a
-																		rel="noreferrer"
-																		target="_blank"
-																		href="https://dashboard.stripe.com/test/payments">
-																		{" "}
-																		Paid By
-																		Credit
-																		Card
-																	</a>
+																	{" "}
+																	Paid By
+																	Credit Card
 																</>
 															) : (
 																<>
@@ -644,6 +637,12 @@ const SellerOrderSummary = () => {
 														timeZone: "Asia/Manila",
 													})}
 												</span>
+												<br />
+												<span className="badge bg-primary border border-warning shadow  mt-2">
+													Seller in-Charge
+												</span>
+												<br />
+												<br />
 												<h6 className="text-capitalize">
 													<b>
 														{
@@ -661,7 +660,7 @@ const SellerOrderSummary = () => {
 											</div>
 											<div className="col-lg-2 border-start">
 												<span style={{ fontSize: 10 }}>
-													Amount of Order
+													Amount of Purchase
 												</span>
 												<h6 className="text-capitalize">
 													PhP&nbsp;
@@ -677,15 +676,9 @@ const SellerOrderSummary = () => {
 															{order.status ===
 															1 ? (
 																<>
-																	<a
-																		rel="noreferrer"
-																		target="_blank"
-																		href="https://dashboard.stripe.com/test/payments">
-																		{" "}
-																		Paid By
-																		Credit
-																		Card
-																	</a>
+																	{" "}
+																	Paid By
+																	Credit Card
 																</>
 															) : (
 																<>
@@ -824,4 +817,4 @@ const SellerOrderSummary = () => {
 	)
 }
 
-export default SellerOrderSummary
+export default SellerPurchaseOrders
