@@ -387,7 +387,7 @@ const SellerPurchaseOrders = () => {
 
 											<div className="col-lg-2 border-start">
 												<span style={{ fontSize: 10 }}>
-													Total Purchase Amount
+													Total Purchases Amount
 												</span>
 												<h5 className="text-capitalize">
 													PhP&nbsp;

@@ -151,8 +151,8 @@ const Login = () => {
 													padding: 10,
 												}}>
 												<h3>
-													We got pet friendly
-													products.
+													We provide quality user
+													interface for orders entry
 												</h3>
 											</Carousel.Caption>
 										</Carousel.Item>
@@ -172,8 +172,9 @@ const Login = () => {
 													padding: 10,
 												}}>
 												<h3>
-													We also got fresh farm
-													products.
+													We deliver an easy and
+													convenient user experience
+													in our app.
 												</h3>
 											</Carousel.Caption>
 										</Carousel.Item>
@@ -193,8 +194,8 @@ const Login = () => {
 													padding: 10,
 												}}>
 												<h3>
-													The word of God is the
-													strongest pillar.
+													We provide better security
+													and ease of payment system
 												</h3>
 											</Carousel.Caption>
 										</Carousel.Item>
@@ -214,8 +215,7 @@ const Login = () => {
 													padding: 10,
 												}}>
 												<h3>
-													We have straight from the
-													farm products.
+													Our system is free to use.
 												</h3>
 											</Carousel.Caption>
 										</Carousel.Item>
@@ -235,8 +235,8 @@ const Login = () => {
 													padding: 10,
 												}}>
 												<h3>
-													Your paw buddy is properly
-													cared here.
+													Trust is the tallest pillar
+													in our organization.
 												</h3>
 											</Carousel.Caption>
 										</Carousel.Item>
@@ -256,7 +256,9 @@ const Login = () => {
 													padding: 10,
 												}}>
 												<h3>
-													We help propagate the Word.
+													Trust us that we will not
+													use our user data for
+													malicious purposes.
 												</h3>
 											</Carousel.Caption>
 										</Carousel.Item>
