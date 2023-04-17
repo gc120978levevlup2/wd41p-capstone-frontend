@@ -13,7 +13,6 @@ import IndexRL from "../view/pages/module_rl/IndexRL"
 import Signup from "../view/pages/Signup"
 import NewSeller from "../view/pages/NewSeller"
 import SellerProducts from "../view/pages/Seller/SellerProducts"
-import SellerDashboard from "../view/pages/Seller/SellerDashboard"
 import SellerOrders from "../view/pages/Seller/SellerOrders"
 import SellerOrderProducts from "../view/pages/Seller/SellerOrderProducts"
 import SellerCustomers from "../view/pages/Seller/SellerCustomers"
@@ -27,6 +26,7 @@ import Retpol from "../view/pages/Others/Retpol"
 import Privpol from "../view/pages/Others/Privpol"
 import Tos from "../view/pages/Others/Tos"
 import Aboutus from "../view/pages/Others/Aboutus"
+import SellerPurchaseOrders from "../view/pages/Seller/SellerPurchaseOrders"
 const ReactRouter = () => {
 	return (
 		<BrowserRouter>
@@ -76,6 +76,10 @@ const ReactRouter = () => {
 					<Route
 						path="/seller_order_summary"
 						element={<SellerOrderSummary />}
+					/>
+					<Route
+						path="/seller_purchase_order"
+						element={<SellerPurchaseOrders />}
 					/>
 					<Route
 						path="/buyer_dashboard"
