@@ -27,6 +27,7 @@ import Privpol from "../view/pages/Others/Privpol"
 import Tos from "../view/pages/Others/Tos"
 import Aboutus from "../view/pages/Others/Aboutus"
 import SellerPurchaseOrders from "../view/pages/Seller/SellerPurchaseOrders"
+import SellerSuccessCash from "../view/pages/Seller/SellerSuccessCash"
 const ReactRouter = () => {
 	return (
 		<BrowserRouter>
@@ -68,6 +69,10 @@ const ReactRouter = () => {
 					<Route
 						path="/seller_order_customer"
 						element={<SellerCustomers />}
+					/>
+					<Route
+						path="/seller_order_success_cash"
+						element={<SellerSuccessCash />}
 					/>
 					<Route
 						path="/seller_order_success"
