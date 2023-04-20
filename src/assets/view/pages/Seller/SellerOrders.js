@@ -1324,7 +1324,9 @@ const SellerOrders = () => {
 																			set_checkout_started(
 																				true
 																			)
-																			check_out_order()
+																			//check_out_order() // try to bypass
+																			window.location =
+																				"/seller_order_success_cash"
 																		}}
 																		className="btn btn-outline-danger w-100">
 																		{checkout_started ? (
