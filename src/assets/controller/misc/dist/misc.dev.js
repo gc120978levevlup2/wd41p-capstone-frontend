@@ -32,7 +32,7 @@ function showModal_with_data(modal_form, on_show_is_done){
     on_show_is_done()
 }
 */
-var backend_site = "https://www.garrymcacho.com"; //const backend_site = "https://localhost"
+var backend_site = "https://www.garrymcacho.com"; //const backend_site = "http://localhost"
 
 exports.backend_site = backend_site;
 

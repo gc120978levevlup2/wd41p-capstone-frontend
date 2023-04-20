@@ -18,6 +18,7 @@ import { useEffect } from "react"
 const Login = () => {
 	const openmodal = useRef()
 	const [msg, set_msg] = useState("")
+	const [is_loading, set_is_loading] = useState(false)
 	function peakPassword() {
 		let password = document.getElementById("exampleInputPassword1")
 		const type = "text"
@@ -35,7 +36,9 @@ const Login = () => {
 	useEffect(() => {
 		// on load
 		login_form_submit(
-			() => {},
+			() => {
+				set_is_loading(true)
+			},
 			(data) => {
 				read_sellers(data.email1, (sellers) => {
 					if (sellers.length === 1) {
@@ -389,10 +392,20 @@ const Login = () => {
 														style={{
 															float: "right",
 														}}>
-														<i
-															className="fa fa-sign-in fa-lg"
-															aria-hidden="true"
-														/>
+														{is_loading ? (
+															<div
+																class="spinner-border"
+																role="status">
+																<span class="sr-only">
+																	Loading...
+																</span>
+															</div>
+														) : (
+															<i
+																className="fa fa-sign-in fa-lg"
+																aria-hidden="true"
+															/>
+														)}
 														&nbsp; Sign in
 													</button>
 												</form>
